@@ -62,7 +62,7 @@ class ClassUtil {
         }
 
         // Limited coercion support
-        if (is_array($serializationData['@context'])) {
+        if (array_key_exists('@context', $serializationData) && is_array($serializationData['@context'])) {
             foreach ($serializationData['@context'] as $contextItem) {
                 if (is_array($contextItem)) {
                     foreach ($contextItem as $contextKey => $contextCoercion) {

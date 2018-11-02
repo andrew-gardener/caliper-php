@@ -28,10 +28,6 @@ class HttpRequestor extends Requestor {
      * @return bool success
      */
     public function send(\IMSGlobal\Caliper\Sensor $sensor, $items) {
-        $status = false;
-        $responseCode = null;
-        $responseText = null;
-
         if (!is_array($items)) {
             $items = [$items];
         }
@@ -45,6 +41,30 @@ class HttpRequestor extends Requestor {
 
         $envelope = $this->createEnvelope($sensor, $items);
         $payload = $this->serializeData($envelope);
+
+        return $this->emitPayload($payload);
+    }
+
+
+    /**
+     * @param string $payload
+     * @throws \InvalidArgumentException if $payload is not a string and valid JSON
+     * @throws \RuntimeException if HTTP response code is not 200
+     * @return bool success
+     */
+    public function emitPayload($payload) {
+        $status = false;
+        $responseCode = null;
+        $responseText = null;
+
+        if (!is_string($payload)) {
+            throw new \InvalidArgumentException(__METHOD__ . ': string expected');
+        }
+
+        # check if valid json
+        if (json_decode($payload)=== FALSE) {
+            throw new \InvalidArgumentException(__METHOD__ . ': valid json expected');
+        }
 
         $headers = [
             'Content-Type' => 'application/json',

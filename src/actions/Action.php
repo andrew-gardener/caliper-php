@@ -26,6 +26,7 @@ class Action extends \IMSGlobal\Caliper\util\BasicEnum {
         DESCRIBED = 'Described',
         DISABLED_CLOSED_CAPTIONING = 'DisabledClosedCaptioning',
         DISLIKED = 'Disliked',
+        DOWNLOADED = 'Downloaded',
         ENABLED_CLOSED_CAPTIONING = 'EnabledClosedCaptioning',
         ENDED = 'Ended',
         ENTERED_FULLSCREEN = 'EnteredFullscreen',
@@ -49,6 +50,7 @@ class Action extends \IMSGlobal\Caliper\util\BasicEnum {
         OPENED_POPOUT = 'OpenedPopout',
         PAUSED = 'Paused',
         POSTED = 'Posted',
+        PRINTED = 'Printed',
         PUBLISHED = 'Published',
         QUESTIONED = 'Questioned',
         RANKED = 'Ranked',
@@ -63,6 +65,7 @@ class Action extends \IMSGlobal\Caliper\util\BasicEnum {
         RETURNED = 'Returned',
         REVIEWED = 'Reviewed',
         REWOUND = 'Rewound',
+        SAVED = 'Saved',
         SEARCHED = 'Searched',
         SHARED = 'Shared',
         SHOWED = 'Showed',
@@ -75,6 +78,7 @@ class Action extends \IMSGlobal\Caliper\util\BasicEnum {
         UNMUTED = 'Unmuted',
         UNPUBLISHED = 'Unpublished',
         UNSUBSCRIBED = 'Unsubscribed',
+        UPLOADED = 'Uploaded',
         USED = 'Used',
         VIEWED = 'Viewed';
 }

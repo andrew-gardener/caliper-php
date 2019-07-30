@@ -7,7 +7,7 @@ use IMSGlobal\Caliper\entities;
 use IMSGlobal\Caliper\util;
 use IMSGlobal\Caliper\util\ClassUtil;
 
-abstract class Entity extends ClassUtil implements \JsonSerializable, entities\schemadotorg\Thing {
+class Entity extends ClassUtil implements \JsonSerializable, entities\schemadotorg\Thing {
     /** @var string */
     protected $id;
     /** @var Context|null */
@@ -30,6 +30,7 @@ abstract class Entity extends ClassUtil implements \JsonSerializable, entities\s
     function __construct($id) {
         $this->setId($id)
             ->setContext(new Context(Context::CONTEXT));
+        $this->setType(new EntityType(EntityType::ENTITY));
     }
 
     /**

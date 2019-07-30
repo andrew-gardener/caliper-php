@@ -5,6 +5,8 @@ class EntityType extends \IMSGlobal\Caliper\util\BasicEnum implements Type {
     const
         __default = '',
         AGENT = 'Agent',
+        AGGREGATE_MEASURE = 'AggregateMeasure',
+        AGGREGATE_MEASURE_COLLECTION = 'AggregateMeasureCollection',
         ANNOTATION = 'Annotation',
         ASSESSMENT = 'Assessment',
         ASSESSMENT_ITEM = 'AssessmentItem',
@@ -12,6 +14,7 @@ class EntityType extends \IMSGlobal\Caliper\util\BasicEnum implements Type {
         AUDIO_OBJECT = 'AudioObject',
         BOOKMARK_ANNOTATION = 'BookmarkAnnotation',
         CHAPTER = 'Chapter',
+        COLLECTION = 'Collection',
         COURSE_OFFERING = 'CourseOffering',
         COURSE_SECTION = 'CourseSection',
         DIGITAL_RESOURCE = 'DigitalResource',

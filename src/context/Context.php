@@ -7,7 +7,8 @@ class Context extends \IMSGlobal\Caliper\util\BasicEnum {
         CONTEXT = 'http://purl.imsglobal.org/ctx/caliper/v1p1',
         RESOURCE_MANAGEMENT_EXTENSION = 'http://purl.imsglobal.org/ctx/caliper/v1p1/ResourceManagementProfile-extension',
         SEARCH_PROFILE_EXTENSION = 'http://purl.imsglobal.org/ctx/caliper/v1p1/SearchProfile-extension',
-        TOOL_LAUNCH_PROFILE_EXTENSION = 'http://purl.imsglobal.org/ctx/caliper/v1p1/ToolLaunchProfile-extension';
+        TOOL_LAUNCH_PROFILE_EXTENSION = 'http://purl.imsglobal.org/ctx/caliper/v1p1/ToolLaunchProfile-extension',
+        TOOL_USE_PROFILE_EXTENSION = 'http://purl.imsglobal.org/ctx/caliper/v1p1/ToolUseProfile-extension';
 
     private $propertyName = '@context';
 

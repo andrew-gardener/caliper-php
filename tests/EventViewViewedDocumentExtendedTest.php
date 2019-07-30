@@ -9,42 +9,37 @@ use IMSGlobal\Caliper\entities\lis\CourseSection;
 use IMSGlobal\Caliper\entities\lis\Membership;
 use IMSGlobal\Caliper\entities\lis\Role;
 use IMSGlobal\Caliper\entities\lis\Status;
-use IMSGlobal\Caliper\entities\reading\WebPage;
+use IMSGlobal\Caliper\entities\reading\Document;
 use IMSGlobal\Caliper\entities\session\Session;
-use IMSGlobal\Caliper\events\NavigationEvent;
+use IMSGlobal\Caliper\events\ViewEvent;
 
 
 /**
  * @requires PHP 5.6.28
  */
-class EventNavigationNavigatedToTest extends CaliperTestCase {
+class EventViewViewedDocumentExtendedTest extends CaliperTestCase {
     function setUp() {
         parent::setUp();
 
 
         $this->setTestObject(
-            (new NavigationEvent('urn:uuid:ff9ec22a-fc59-4ae1-ae8d-2c9463ee2f8f'))
+            (new ViewEvent('urn:uuid:3a9bd869-addc-48b1-80f6-a14b2ff591ed'))
                 ->setActor(
                     (new Person('https://example.edu/users/554433'))
                 )
                 ->setAction(
-                    new Action(Action::NAVIGATED_TO))
+                    new Action(Action::VIEWED))
                 ->setObject(
-                    (new WebPage('https://example.edu/terms/201601/courses/7/sections/1/pages/2'))
+                    (new Document('https://example.edu/etexts/200.epub'))
                         ->setName(
-                            'Learning Analytics Specifications'
+                            'IMS Caliper Specification'
                         )
-                        ->setDescription(
-                            'Overview of Learning Analytics Specifications with particular emphasis on IMS Caliper.'
+                        ->setVersion(
+                            '1.1'
                         )
-                        ->setDateCreated(
-                            new \DateTime('2016-08-01T09:00:00.000Z'))
                 )
                 ->setEventTime(
                     new \DateTime('2016-11-15T10:15:00.000Z'))
-                ->setReferrer(
-                    (new WebPage('https://example.edu/terms/201601/courses/7/sections/1/pages/1'))
-                )
                 ->setEdApp(
                     (new SoftwareApplication('https://example.edu'))->makeReference())
                 ->setGroup(
@@ -74,6 +69,14 @@ class EventNavigationNavigatedToTest extends CaliperTestCase {
                         ->setStartedAtTime(
                             new \DateTime('2016-11-15T10:00:00.000Z'))
                 )
+                ->setExtensions(
+                    [
+                        "job" => [
+                            "id" => "08c1233d-9ba3-40ac-952f-004c47a50ff7",
+                            "jobTag" => "caliper_batch_job",
+                            "jobDate" => "2016-11-16T01:01:00.000Z",
+                        ],
+                    ])
         );
     }
 }

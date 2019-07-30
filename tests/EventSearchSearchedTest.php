@@ -53,11 +53,6 @@ class EventSearchSearchedTest extends CaliperTestCase {
                                     new \DateTime('2018-11-15T10:05:00.000Z'))
                         )
                         ->setSearchResultsItemCount(3)
-                        ->setSearchResults([
-                            "https://example.edu/catalog/record/01234?query=IMS%20AND%20%28Caliper%20OR%20Analytics%29",
-                            "https://example.edu/catalog/record/09876?query=IMS%20AND%20%28Caliper%20OR%20Analytics%29",
-                            "https://example.edu/catalog/record/05432?query=IMS%20AND%20%28Caliper%20OR%20Analytics%29"
-                        ])
                 )
                 ->setEventTime(
                     new \DateTime('2018-11-15T10:05:00.000Z'))

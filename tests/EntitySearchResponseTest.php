@@ -37,14 +37,6 @@ class EntitySearchResponseTest extends CaliperTestCase {
                             new \DateTime('2018-11-15T10:05:00.000Z'))
                 )
                 ->setSearchResultsItemCount(3)
-                ->setSearchResults([
-                    (new Document("https://example.edu/catalog/record/01234?query=IMS%20AND%20%28Caliper%20OR%20Analytics%29"))
-                        ->setMediaType("application/pdf"),
-                    (new VideoObject("https://example.edu/catalog/record/09876?query=IMS%20AND%20%28Caliper%20OR%20Analytics%29"))
-                        ->setMediaType("video/ogg"),
-                    (new Document("https://example.edu/catalog/record/05432?query=IMS%20AND%20%28Caliper%20OR%20Analytics%29"))
-                        ->setMediaType("application/epub+zip")
-                ])
                 ->setDateCreated(
                     new \DateTime('2018-11-15T10:05:00.000Z'))
         );

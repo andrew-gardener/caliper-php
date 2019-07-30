@@ -9,6 +9,7 @@ class EventType extends \IMSGlobal\Caliper\util\BasicEnum {
         ASSESSMENT_ITEM = 'AssessmentItemEvent',
         ASSIGNABLE = 'AssignableEvent',
         EVENT = 'Event',
+        FEEDBACK = 'FeedbackEvent',
         FORUM = 'ForumEvent',
         MEDIA = 'MediaEvent',
         MESSAGE = 'MessageEvent',

@@ -2,6 +2,7 @@
 
 namespace IMSGlobal\Caliper\events;
 
+use IMSGlobal\Caliper\entities\foaf\Agent;
 use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities\survey\QuestionnaireItem;
 use IMSGlobal\Caliper\entities\response\Response;
@@ -31,8 +32,8 @@ class QuestionnaireItemEvent extends Event {
      * @throws \InvalidArgumentException Person expected
      * @return $this|QuestionnaireItemEvent
      */
-    public function setActor($actor) {
-        if (is_null($actor) || is_string($actor) || ($actor instanceof Person)) {
+    public function setActor(Agent $actor) {
+        if (is_null($actor) || ($actor instanceof Person)) {
             $this->actor = $actor;
             return $this;
         }

@@ -14,8 +14,8 @@ class EntityLikertScaleTest extends CaliperTestCase {
         $this->setTestObject(
             (new LikertScale('https://example.edu/scale/2'))
                 ->setScalePoints(4)
-                ->setItemLabels(["Strongly Disagree", "Disagree", "Agree", "Strongly Agree"])
-                ->setItemValues(["-2", "-1", "1", "2"])
+                ->setItemLabels(['Strongly Disagree', 'Disagree', 'Agree', 'Strongly Agree'])
+                ->setItemValues(['-2', '-1', '1', '2'])
         );
     }
 }

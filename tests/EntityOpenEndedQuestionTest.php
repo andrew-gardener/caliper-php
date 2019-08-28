@@ -13,7 +13,7 @@ class EntityOpenEndedQuestionTest extends CaliperTestCase {
 
         $this->setTestObject(
             (new OpenEndedQuestion('https://example.edu/surveys/100/questionnaires/30/items/2/question'))
-                ->setQuestionPosed("What would you change about your course?")
+                ->setQuestionPosed('What would you change about your course?')
         );
     }
 }

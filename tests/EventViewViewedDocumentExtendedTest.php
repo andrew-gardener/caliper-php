@@ -71,10 +71,10 @@ class EventViewViewedDocumentExtendedTest extends CaliperTestCase {
                 )
                 ->setExtensions(
                     [
-                        "job" => [
-                            "id" => "08c1233d-9ba3-40ac-952f-004c47a50ff7",
-                            "jobTag" => "caliper_batch_job",
-                            "jobDate" => "2016-11-16T01:01:00.000Z",
+                        'job' => [
+                            'id' => '08c1233d-9ba3-40ac-952f-004c47a50ff7',
+                            'jobTag' => 'caliper_batch_job',
+                            'jobDate' => '2016-11-16T01:01:00.000Z',
                         ],
                     ])
         );

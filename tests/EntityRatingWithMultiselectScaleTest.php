@@ -30,18 +30,18 @@ class EntityRatingWithMultiselectScaleTest extends CaliperTestCase {
                 )
                 ->setQuestion(
                     (new RatingScaleQuestion('https://example.edu/question/3'))
-                        ->setQuestionPosed("How do you feel about this content? (select one or more)")
+                        ->setQuestionPosed('How do you feel about this content? (select one or more)')
                         ->setScale(
                             (new MultiselectScale('https://example.edu/scale/3'))
                                 ->setScalePoints(5)
-                                ->setItemLabels(["😁", "😀", "😐", "😕", "😞"])
-                                ->setItemValues(["superhappy", "happy", "indifferent", "unhappy", "disappointed"])
+                                ->setItemLabels(['😁', '😀', '😐', '😕', '😞'])
+                                ->setItemValues(['superhappy', 'happy', 'indifferent', 'unhappy', 'disappointed'])
                                 ->setIsOrderedSelection(false)
                                 ->setMinSelections(1)
                                 ->setMaxSelections(5)
                         )
                 )
-                ->setSelections(["superhappy", "disappointed"])
+                ->setSelections(['superhappy', 'disappointed'])
                 ->setDateCreated(new \DateTime('2018-08-01T06:00:00.000Z'))
         );
     }

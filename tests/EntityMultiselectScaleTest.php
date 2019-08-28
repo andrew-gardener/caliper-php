@@ -14,8 +14,8 @@ class EntityMultiselectScaleTest extends CaliperTestCase {
         $this->setTestObject(
             (new MultiselectScale('https://example.edu/scale/3'))
                 ->setScalePoints(5)
-                ->setItemLabels(["😁", "😀", "😐", "😕", "😞"])
-                ->setItemValues(["superhappy", "happy", "indifferent", "unhappy", "disappointed"])
+                ->setItemLabels(['😁', '😀', '😐', '😕', '😞'])
+                ->setItemValues(['superhappy', 'happy', 'indifferent', 'unhappy', 'disappointed'])
                 ->setIsOrderedSelection(false)
                 ->setMinSelections(1)
                 ->setMaxSelections(5)

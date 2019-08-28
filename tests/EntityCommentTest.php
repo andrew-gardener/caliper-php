@@ -30,7 +30,7 @@ class EntityCommentTest extends CaliperTestCase {
                         )
                         ->setDateCreated(new \DateTime('2018-08-02T11:32:00.000Z'))
                 )
-                ->setValue("I like what you did here but you need to improve on...")
+                ->setValue('I like what you did here but you need to improve on...')
                 ->setDateCreated(new \DateTime('2018-08-01T06:00:00.000Z'))
         );
     }

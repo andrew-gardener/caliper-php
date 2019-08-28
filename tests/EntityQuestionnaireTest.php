@@ -15,10 +15,10 @@ class EntityQuestionnaireTest extends CaliperTestCase {
         $this->setTestObject(
             (new Questionnaire('https://example.edu/surveys/100/questionnaires/30'))
                 ->setItems([
-                    (new QuestionnaireItem("https://example.edu/surveys/100/questionnaires/30/items/1")),
-                    (new QuestionnaireItem("https://example.edu/surveys/100/questionnaires/30/items/2"))
+                    (new QuestionnaireItem('https://example.edu/surveys/100/questionnaires/30/items/1')),
+                    (new QuestionnaireItem('https://example.edu/surveys/100/questionnaires/30/items/2'))
                 ])
-                ->setDateCreated(new \DateTime("2018-08-01T06:00:00.000Z"))
+                ->setDateCreated(new \DateTime('2018-08-01T06:00:00.000Z'))
         );
     }
 }

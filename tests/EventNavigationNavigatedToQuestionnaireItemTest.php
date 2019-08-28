@@ -34,9 +34,9 @@ class EventNavigationNavigatedToQuestionnaireItemTest extends CaliperTestCase {
                     (new QuestionnaireItem('https://example.edu/surveys/100/questionnaires/30/items/2'))
                         ->setQuestion(
                             (new OpenEndedQuestion('https://example.edu/surveys/100/questionnaires/30/items/2/question'))
-                                ->setQuestionPosed("What would you change about your course?")
+                                ->setQuestionPosed('What would you change about your course?')
                         )
-                        ->setCategories(["teaching effectiveness", "Course structure"])
+                        ->setCategories(['teaching effectiveness', 'Course structure'])
                         ->setWeight(1.0)
                 )
                 ->setEventTime(

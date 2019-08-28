@@ -60,15 +60,15 @@ class EventFeedbackRankedTest extends CaliperTestCase {
                         )
                         ->setQuestion(
                             (new RatingScaleQuestion('https://example.edu/question/2'))
-                                ->setQuestionPosed("Do you agree with the opinion presented?")
+                                ->setQuestionPosed('Do you agree with the opinion presented?')
                                 ->setScale(
                                     (new LikertScale('https://example.edu/scale/2'))
                                         ->setScalePoints(4)
-                                        ->setItemLabels(["Strongly Disagree", "Disagree", "Agree", "Strongly Agree"])
-                                        ->setItemValues(["-2", "-1", "1", "2"])
+                                        ->setItemLabels(['Strongly Disagree', 'Disagree', 'Agree', 'Strongly Agree'])
+                                        ->setItemValues(['-2', '-1', '1', '2'])
                                 )
                         )
-                        ->setSelections(["1"])
+                        ->setSelections(['1'])
                         ->setRatingComment(
                             (new Comment('https://example.edu/terms/201801/courses/7/sections/1/assess/1/items/6/users/665544/responses/1/comment/1'))
                                 ->setCommenter(
@@ -84,7 +84,7 @@ class EventFeedbackRankedTest extends CaliperTestCase {
                                         )
                                         ->setDateCreated(new \DateTime('2018-08-02T11:32:00.000Z'))
                                 )
-                                ->setValue("I like what you did here but you need to improve on...")
+                                ->setValue('I like what you did here but you need to improve on...')
                                 ->setDateCreated(new \DateTime('2018-08-01T06:00:00.000Z'))
                         )
                         ->setDateCreated(new \DateTime('2018-08-01T06:00:00.000Z'))

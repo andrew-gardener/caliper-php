@@ -13,7 +13,7 @@ class EntityQuestionTest extends CaliperTestCase {
 
         $this->setTestObject(
             (new Question('https://example.edu/question/1'))
-                ->setQuestionPosed("How would you rate this?")
+                ->setQuestionPosed('How would you rate this?')
         );
     }
 }

@@ -33,14 +33,14 @@ class EventSurveyInvitationSentTest extends CaliperTestCase {
                 ->setObject(
                     (new SurveyInvitation('https://example.edu/surveys/100/invitations/users/554433'))
                         ->setSentCount(1)
-                        ->setDateSent(new \DateTime("2018-11-15T10:05:00.000Z"))
+                        ->setDateSent(new \DateTime('2018-11-15T10:05:00.000Z'))
                         ->setRater(
                             (new Person('https://example.edu/users/554433'))
                         )
                         ->setSurvey(
                             (new Survey('https://example.edu/survey/1'))
                         )
-                        ->setDateCreated(new \DateTime("2018-08-01T06:00:00.000Z"))
+                        ->setDateCreated(new \DateTime('2018-08-01T06:00:00.000Z'))
                 )
                 ->setEventTime(
                     new \DateTime('2018-11-12T10:15:00.000Z'))

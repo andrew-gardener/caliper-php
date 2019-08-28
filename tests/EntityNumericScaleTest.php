@@ -14,9 +14,9 @@ class EntityNumericScaleTest extends CaliperTestCase {
         $this->setTestObject(
             (new NumericScale('https://example.edu/scale/4'))
                 ->setMinValue(0.0)
-                ->setMinLabel("Disliked")
+                ->setMinLabel('Disliked')
                 ->setMaxValue(10.0)
-                ->setMaxLabel("Liked")
+                ->setMaxLabel('Liked')
                 ->setStep(0.5)
                 ->setDateCreated(new \DateTime('2018-08-01T06:00:00.000Z'))
         );

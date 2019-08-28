@@ -13,11 +13,11 @@ class EntityDateTimeQuestionTest extends CaliperTestCase {
 
         $this->setTestObject(
             (new DateTimeQuestion('https://example.edu/surveys/100/questionnaires/30/items/3/question'))
-                ->setQuestionPosed("When would you be available for an exam next term?")
-                ->setMinDateTime(new \DateTime("2018-09-01T06:00:00.000Z"))
-                ->setMinLabel("Start of Term")
-                ->setMaxDateTime(new \DateTime("2018-12-30T06:00:00.000Z"))
-                ->setMaxLabel("End of Term")
+                ->setQuestionPosed('When would you be available for an exam next term?')
+                ->setMinDateTime(new \DateTime('2018-09-01T06:00:00.000Z'))
+                ->setMinLabel('Start of Term')
+                ->setMaxDateTime(new \DateTime('2018-12-30T06:00:00.000Z'))
+                ->setMaxLabel('End of Term')
         );
     }
 }

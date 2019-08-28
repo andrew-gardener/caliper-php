@@ -49,7 +49,7 @@ class SurveyEvent extends Event {
      * @return $this|SurveyEvent
      */
     public function setObject($object) {
-        if (is_null($object) || is_string($object) || ($object instanceof Survey)) {
+        if (is_null($object) || ($object instanceof Survey)) {
             $this->object = $object;
             return $this;
         }

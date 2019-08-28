@@ -49,7 +49,7 @@ class QuestionnaireEvent extends Event {
      * @return $this|QuestionnaireEvent
      */
     public function setObject($object) {
-        if (is_null($object) || is_string($object) || ($object instanceof Questionnaire)) {
+        if (is_null($object) || ($object instanceof Questionnaire)) {
             $this->object = $object;
             return $this;
         }

@@ -5,7 +5,7 @@ namespace IMSGlobal\Caliper\entities\agent;
 use IMSGlobal\Caliper\entities;
 
 class SoftwareApplication extends entities\Entity implements entities\foaf\Agent,
-    entities\schemadotorg\SoftwareApplication {
+    entities\schemadotorg\SoftwareApplication, entities\Targetable {
     /** @var string */
     private $version;
 

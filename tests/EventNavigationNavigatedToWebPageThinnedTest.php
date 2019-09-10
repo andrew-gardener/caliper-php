@@ -14,7 +14,7 @@ use IMSGlobal\Caliper\events\NavigationEvent;
 /**
  * @requires PHP 5.6.28
  */
-class EventNavigationNavigatedToThinnedTest extends CaliperTestCase {
+class EventNavigationNavigatedToWebPageThinnedTest extends CaliperTestCase {
     function setUp() {
         parent::setUp();
 

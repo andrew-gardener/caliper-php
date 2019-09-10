@@ -3,10 +3,18 @@
 namespace IMSGlobal\Caliper\events;
 
 use IMSGlobal\Caliper\entities\agent\SoftwareApplication;
+use IMSGlobal\Caliper\entities\measure\AggregateMeasureCollection;
+use IMSGlobal\Caliper\entities\Targetable;
+use IMSGlobal\Caliper\entities\Generatable;
+use IMSGlobal\Caliper\context\Context;
 
 class ToolUseEvent extends Event {
     /** @var SoftwareApplication */
     private $object;
+    /** @var SoftwareApplication */
+    private $target;
+    /** @var AggregateMeasureCollection */
+    private $generated;
 
     public function __construct($id = null) {
         parent::__construct($id);
@@ -30,5 +38,40 @@ class ToolUseEvent extends Event {
         }
 
         throw new \InvalidArgumentException(__METHOD__ . ': SoftwareApplication expected');
+    }
+
+    /** @return SoftwareApplication target */
+    public function getTarget() {
+        return $this->target;
+    }
+
+    /**
+     * @param SoftwareApplication $target
+     * @return $this|ToolUseEvent
+     */
+    public function setTarget(Targetable $target) {
+        if (is_null($target) || ($target instanceof SoftwareApplication)) {
+            $this->target = $target;
+            return $this;
+        }
+
+        throw new \InvalidArgumentException(__METHOD__ . ': SoftwareApplication expected');
+    }
+
+    /** @return Generatable generated */
+    public function getGenerated() {
+        return $this->generated;
+    }
+
+    /**
+     * @param Generatable $generated
+     * @return $this|ToolUseEvent
+     */
+    public function setGenerated(Generatable $generated) {
+        if ($generated instanceof AggregateMeasureCollection) {
+            $this->setContext(new Context(Context::TOOL_USE_PROFILE_EXTENSION));
+        }
+        $this->generated = $generated;
+        return $this;
     }
 }

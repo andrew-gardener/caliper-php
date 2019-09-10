@@ -45,8 +45,8 @@ class EventToolLaunchReturnedTest extends CaliperTestCase {
                 )
                 ->setGroup(
                     (new CourseSection('https://example.edu/terms/201801/courses/7/sections/1'))
-                        ->setCourseNumber("CPS 435-01")
-                        ->setAcademicSession("Fall 2018")
+                        ->setCourseNumber('CPS 435-01')
+                        ->setAcademicSession('Fall 2018')
                 )
                 ->setMembership(
                     (new Membership('https://example.edu/terms/201801/courses/7/sections/1/rosters/1'))

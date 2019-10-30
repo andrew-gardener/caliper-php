@@ -37,12 +37,14 @@ class EnvelopeEntityBatchTest extends CaliperTestCase {
                         (new VideoObject('https://example.edu/videos/1225'))
                             ->setMediaType('video/ogg')
                             ->setName('Introduction to IMS Caliper')
+                            ->setStorageName('caliper-intro.ogg')
                             ->setDateCreated(new \DateTime('2016-08-01T06:00:00.000Z'))
                             ->setDuration('PT1H12M27S')
                             ->setVersion('1.1'),
                         (new VideoObject('https://example.edu/videos/5629'))
                             ->setMediaType('video/ogg')
                             ->setName('IMS Caliper Activity Profiles')
+                            ->setStorageName('caliper-activity-profiles.ogg')
                             ->setDateCreated(new \DateTime('2016-08-01T06:00:00.000Z'))
                             ->setDuration('PT55M13S')
                             ->setVersion('1.1.1'),

@@ -3,6 +3,7 @@ require_once 'CaliperTestCase.php';
 
 use IMSGlobal\Caliper\entities\Collection;
 use IMSGlobal\Caliper\entities\Entity;
+use IMSGlobal\Caliper\entities\media\VideoObject;
 
 /**
  * @requires PHP 5.6.28
@@ -12,13 +13,27 @@ class EntityCollectionTest extends CaliperTestCase {
         parent::setUp();
 
         $this->setTestObject(
-            (new Collection('urn:uuid:9e5987b9-31db-48bf-8dfb-4f6055a8c5db'))
+            (new Collection('https://example.edu/terms/201601/courses/7/sections/1/resources/2'))
                 ->setItems(
                     [
-                        (new Entity('urn:uuid:81e6326d-e57e-43b8-a949-e8a835b4462a')),
-                        (new Entity('urn:uuid:f83086d9-d046-4464-8fbe-c8e4f9e8d7e2'))
+                        (new VideoObject('https://example.edu/videos/1225'))
+                            ->setMediaType('video/ogg')
+                            ->setName('Introduction to IMS Caliper')
+                            ->setStorageName('caliper-intro.ogg')
+                            ->setDateCreated(new \DateTime('2019-08-01T06:00:00.000Z'))
+                            ->setDuration('PT1H12M27S')
+                            ->setVersion('1.1'),
+                        (new VideoObject('https://example.edu/videos/5629'))
+                            ->setMediaType('video/ogg')
+                            ->setName('IMS Caliper Activity Profiles')
+                            ->setStorageName('caliper-activity-profiles.ogg')
+                            ->setDateCreated(new \DateTime('2019-08-01T06:00:00.000Z'))
+                            ->setDuration('PT55M13S')
+                            ->setVersion('1.1.1'),
                     ]
                 )
+                ->setDateCreated(new \DateTime('2019-08-01T06:00:00.000Z'))
+                ->setDateModified(new \DateTime('2019-09-02T11:30:00.000Z'))
         );
     }
 }

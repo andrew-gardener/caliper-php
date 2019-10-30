@@ -1,9 +1,7 @@
 <?php
 namespace IMSGlobal\Caliper\entities;
 
-use IMSGlobal\Caliper\context\Context;
-
-class Collection extends Entity {
+class Collection extends Entity implements Collectable {
     /** @var Entity[]|null */
     private $items;
 

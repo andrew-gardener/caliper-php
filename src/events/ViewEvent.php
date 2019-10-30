@@ -32,9 +32,6 @@ class ViewEvent extends Event {
     public function setObject($object) {
         if (is_null($object) || ($object instanceof DigitalResource)) {
             $this->object = $object;
-            if ($object instanceof Questionnaire || $object instanceof QuestionnaireItem) {
-                $this->setContext(new Context(Context::SURVEY_PROFILE_EXTENSION));
-            }
             return $this;
         }
 

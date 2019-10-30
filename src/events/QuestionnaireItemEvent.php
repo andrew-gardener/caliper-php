@@ -20,7 +20,6 @@ class QuestionnaireItemEvent extends Event {
     public function __construct($id = null) {
         parent::__construct($id);
         $this->setType(new EventType(EventType::QUESTIONNAIRE_ITEM));
-        $this->setContext(new Context(Context::SURVEY_PROFILE_EXTENSION));
     }
 
     /** @return Person object */

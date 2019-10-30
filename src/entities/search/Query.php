@@ -18,7 +18,6 @@ class Query extends Entity implements entities\Referrable {
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::QUERY));
-        $this->setContext(new Context(Context::SEARCH_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

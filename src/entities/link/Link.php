@@ -9,7 +9,6 @@ class Link extends entities\Entity implements entities\Referrable, entities\Targ
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::LINK));
-        $this->setContext(new Context(Context::TOOL_LAUNCH_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

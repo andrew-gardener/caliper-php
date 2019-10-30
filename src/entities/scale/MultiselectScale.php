@@ -22,7 +22,6 @@ class MultiselectScale extends Scale {
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::MULTISELECT_SCALE));
-        $this->setContext(new Context(Context::FEEDBACK_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

@@ -11,7 +11,6 @@ class OpenEndedResponse extends Response {
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new ResponseType(ResponseType::OPEN_ENDED));
-        $this->setContext(new Context(Context::SURVEY_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

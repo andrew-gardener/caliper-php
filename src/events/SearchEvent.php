@@ -14,7 +14,6 @@ class SearchEvent extends Event {
     public function __construct($id = null) {
         parent::__construct($id);
         $this->setType(new EventType(EventType::SEARCH));
-        $this->setContext(new Context(Context::SEARCH_PROFILE_EXTENSION));
     }
 
     /** @return SearchResponse generated */

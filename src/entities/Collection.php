@@ -10,7 +10,6 @@ class Collection extends Entity {
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new EntityType(EntityType::COLLECTION));
-        $this->setContext(new Context(Context::TOOL_USE_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

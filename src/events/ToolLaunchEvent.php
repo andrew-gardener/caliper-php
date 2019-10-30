@@ -20,7 +20,6 @@ class ToolLaunchEvent extends Event {
     public function __construct($id = null) {
         parent::__construct($id);
         $this->setType(new EventType(EventType::TOOL_LAUNCH));
-        $this->setContext(new Context(Context::TOOL_LAUNCH_PROFILE_EXTENSION));
     }
 
     /** @return SoftwareApplication object */

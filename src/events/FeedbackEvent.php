@@ -15,7 +15,6 @@ class FeedbackEvent extends Event {
     public function __construct($id = null) {
         parent::__construct($id);
         $this->setType(new EventType(EventType::FEEDBACK));
-        $this->setContext(new Context(Context::FEEDBACK_PROFILE_EXTENSION));
     }
 
     /** @return Rating|Comment|null generated */

@@ -12,7 +12,6 @@ class LtiLink extends entities\DigitalResource implements entities\Referrable, e
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::LTI_LINK));
-        $this->setContext(new Context(Context::TOOL_LAUNCH_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

@@ -13,7 +13,6 @@ class Survey extends Collection {
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::SURVEY));
-        $this->setContext(new Context(Context::SURVEY_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

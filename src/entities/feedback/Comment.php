@@ -18,7 +18,6 @@ class Comment extends Entity implements entities\Referrable, entities\Generatabl
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::COMMENT));
-        $this->setContext(new Context(Context::FEEDBACK_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

@@ -23,7 +23,6 @@ class SearchResponse extends Entity implements entities\Referrable, entities\Gen
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::SEARCH_RESPONSE));
-        $this->setContext(new Context(Context::SEARCH_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

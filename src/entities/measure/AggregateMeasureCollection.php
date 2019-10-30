@@ -12,7 +12,6 @@ class AggregateMeasureCollection extends Collection implements entities\Generata
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::AGGREGATE_MEASURE_COLLECTION));
-        $this->setContext(new Context(Context::TOOL_USE_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

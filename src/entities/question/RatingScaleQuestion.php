@@ -14,7 +14,6 @@ class RatingScaleQuestion extends Question {
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::RATING_SCALE_QUESTION));
-        $this->setContext(new Context(Context::FEEDBACK_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

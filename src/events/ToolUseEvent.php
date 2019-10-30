@@ -68,9 +68,6 @@ class ToolUseEvent extends Event {
      * @return $this|ToolUseEvent
      */
     public function setGenerated(Generatable $generated) {
-        if ($generated instanceof AggregateMeasureCollection) {
-            $this->setContext(new Context(Context::TOOL_USE_PROFILE_EXTENSION));
-        }
         $this->generated = $generated;
         return $this;
     }

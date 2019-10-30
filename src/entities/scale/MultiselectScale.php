@@ -3,7 +3,6 @@
 namespace IMSGlobal\Caliper\entities\scale;
 
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 
 class MultiselectScale extends Scale {
     /** @var int[] */

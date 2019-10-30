@@ -5,7 +5,6 @@ namespace IMSGlobal\Caliper\entities\search;
 use IMSGlobal\Caliper\entities\Entity;
 use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 
 class Query extends Entity implements entities\Referrable {
     /** @var Person|null */

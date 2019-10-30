@@ -5,7 +5,6 @@ namespace IMSGlobal\Caliper\entities\survey;
 use IMSGlobal\Caliper\entities\Entity;
 use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 use IMSGlobal\Caliper\util\TimestampUtil;
 
 class SurveyInvitation extends Entity {

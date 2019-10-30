@@ -3,7 +3,6 @@ namespace IMSGlobal\Caliper\entities\measure;
 
 use IMSGlobal\Caliper\entities\Entity;
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 use IMSGlobal\Caliper\util\TimestampUtil;
 
 class AggregateMeasure extends Entity {

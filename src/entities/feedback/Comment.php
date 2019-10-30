@@ -5,7 +5,6 @@ namespace IMSGlobal\Caliper\entities\feedback;
 use IMSGlobal\Caliper\entities\Entity;
 use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 
 class Comment extends Entity implements entities\Referrable, entities\Generatable {
     /** @var Person */

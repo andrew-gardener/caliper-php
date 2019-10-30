@@ -6,7 +6,6 @@ use IMSGlobal\Caliper\entities\agent\SoftwareApplication;
 use IMSGlobal\Caliper\entities\measure\AggregateMeasureCollection;
 use IMSGlobal\Caliper\entities\Targetable;
 use IMSGlobal\Caliper\entities\Generatable;
-use IMSGlobal\Caliper\context\Context;
 
 class ToolUseEvent extends Event {
     /** @var SoftwareApplication */

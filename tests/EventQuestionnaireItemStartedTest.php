@@ -1,6 +1,7 @@
 <?php
 require_once 'CaliperTestCase.php';
 
+use IMSGlobal\Caliper\profiles\Profile;
 use IMSGlobal\Caliper\actions\Action;
 use IMSGlobal\Caliper\entities\agent\Organization;
 use IMSGlobal\Caliper\entities\agent\Person;
@@ -14,7 +15,6 @@ use IMSGlobal\Caliper\entities\question\RatingScaleQuestion;
 use IMSGlobal\Caliper\entities\scale\LikertScale;
 use IMSGlobal\Caliper\entities\session\Session;
 use IMSGlobal\Caliper\events\QuestionnaireItemEvent;
-use IMSGlobal\Caliper\context\Context;
 
 
 /**
@@ -30,6 +30,8 @@ class EventQuestionnaireItemStartedTest extends CaliperTestCase {
                 ->setActor(
                     (new Person('https://example.edu/users/554433'))
                 )
+                ->setProfile(
+                    new Profile(Profile::SURVEY))
                 ->setAction(
                     new Action(Action::STARTED))
                 ->setObject(

@@ -7,7 +7,6 @@ use IMSGlobal\Caliper\entities\link\Link;
 use IMSGlobal\Caliper\entities\link\LtiLink;
 use IMSGlobal\Caliper\entities\Targetable;
 use IMSGlobal\Caliper\entities\Generatable;
-use IMSGlobal\Caliper\context\Context;
 
 class ToolLaunchEvent extends Event {
     /** @var SoftwareApplication */

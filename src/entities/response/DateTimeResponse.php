@@ -2,7 +2,6 @@
 
 namespace IMSGlobal\Caliper\entities\response;
 
-use IMSGlobal\Caliper\context\Context;
 use IMSGlobal\Caliper\util\TimestampUtil;
 
 class DateTimeResponse extends Response {

@@ -3,7 +3,6 @@
 namespace IMSGlobal\Caliper\entities\link;
 
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 
 class LtiLink extends entities\DigitalResource implements entities\Referrable, entities\Targetable {
     /** @var string */

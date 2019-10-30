@@ -3,7 +3,6 @@
 namespace IMSGlobal\Caliper\events;
 use IMSGlobal\Caliper\entities\Entity;
 use IMSGlobal\Caliper\entities\Generatable;
-use IMSGlobal\Caliper\context\Context;
 
 
 class ResourceManagementEvent extends Event {

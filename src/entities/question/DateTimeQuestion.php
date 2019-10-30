@@ -4,7 +4,6 @@ namespace IMSGlobal\Caliper\entities\question;
 
 use IMSGlobal\Caliper\entities\DigitalResource;
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 use IMSGlobal\Caliper\util\TimestampUtil;
 
 class DateTimeQuestion extends Question {

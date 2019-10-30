@@ -3,7 +3,6 @@ namespace IMSGlobal\Caliper\entities\measure;
 
 use IMSGlobal\Caliper\entities\Collection;
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 
 class AggregateMeasureCollection extends Collection implements entities\Generatable {
     /** @var AggregateMeasure[]|null */

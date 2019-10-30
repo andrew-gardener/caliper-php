@@ -6,7 +6,6 @@ use IMSGlobal\Caliper\entities\Entity;
 use IMSGlobal\Caliper\entities\search\Query;
 use IMSGlobal\Caliper\entities\agent\SoftwareApplication;
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 
 class SearchResponse extends Entity implements entities\Referrable, entities\Generatable {
     /** @var SoftwareApplication|null */

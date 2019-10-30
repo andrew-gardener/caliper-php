@@ -4,7 +4,6 @@ require_once 'CaliperTestCase.php';
 use IMSGlobal\Caliper\entities\survey\QuestionnaireItem;
 use IMSGlobal\Caliper\entities\question\RatingScaleQuestion;
 use IMSGlobal\Caliper\entities\scale\LikertScale;
-use IMSGlobal\Caliper\context\Context;
 
 /**
  * @requires PHP 5.6.28

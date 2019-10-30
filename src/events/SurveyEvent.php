@@ -5,7 +5,6 @@ namespace IMSGlobal\Caliper\events;
 use IMSGlobal\Caliper\entities\foaf\Agent;
 use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities\survey\Survey;
-use IMSGlobal\Caliper\context\Context;
 
 class SurveyEvent extends Event {
     /** @var Person */

@@ -4,7 +4,6 @@ namespace IMSGlobal\Caliper\entities\survey;
 
 use IMSGlobal\Caliper\entities\DigitalResourceCollection;
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 
 class Questionnaire extends entities\DigitalResourceCollection {
     /** @var QuestionnaireItem[]|null */

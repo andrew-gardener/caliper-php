@@ -2,8 +2,6 @@
 
 namespace IMSGlobal\Caliper\entities\response;
 
-use IMSGlobal\Caliper\context\Context;
-
 class OpenEndedResponse extends Response {
     /** @var string */
     private $value;

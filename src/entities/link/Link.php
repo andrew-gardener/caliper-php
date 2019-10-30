@@ -3,7 +3,6 @@
 namespace IMSGlobal\Caliper\entities\link;
 
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 
 class Link extends entities\Entity implements entities\Referrable, entities\Targetable {
     public function __construct($id) {

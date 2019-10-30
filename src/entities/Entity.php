@@ -18,6 +18,8 @@ class Entity extends ClassUtil implements \JsonSerializable, entities\schemadoto
     private $type;
     /** @var string */
     private $name;
+    /** @var SystemIdentifier[]|null */
+    private $otherIdentifiers;
     /** @var string */
     private $description;
     /** @var \array[] */
@@ -49,6 +51,7 @@ class Entity extends ClassUtil implements \JsonSerializable, entities\schemadoto
             'id' => $this->getId(),
             'type' => $this->getType(),
             'name' => $this->getName(),
+            'otherIdentifiers' => $this->getOtherIdentifiers(),
             'description' => $this->getDescription(),
             'extensions' => $this->getExtensions(),
             'dateCreated' => util\TimestampUtil::formatTimeISO8601MillisUTC($this->getDateCreated()),
@@ -132,6 +135,33 @@ class Entity extends ClassUtil implements \JsonSerializable, entities\schemadoto
         }
 
         $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return SystemIdentifier[]
+     */
+    public function getOtherIdentifiers() {
+        return $this->otherIdentifiers;
+    }
+
+    /**
+     * @param SystemIdentifier[] $otherIdentifiers
+     * @throws \InvalidArgumentException array of SystemIdentifier required
+     * @return $this|Entity
+     */
+    public function setOtherIdentifiers($otherIdentifiers) {
+        if (!is_array($otherIdentifiers)) {
+            $otherIdentifiers = [$otherIdentifiers];
+        }
+
+        foreach ($otherIdentifiers as $aOtherIdentifier) {
+            if (!($aOtherIdentifier instanceof SystemIdentifier)) {
+                throw new \InvalidArgumentException( __METHOD__ . ': array of SystemIdentifier expected');
+            }
+        }
+
+        $this->otherIdentifiers = $otherIdentifiers;
         return $this;
     }
 

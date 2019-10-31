@@ -246,5 +246,20 @@ class Entity extends ClassUtil implements \JsonSerializable, entities\schemadoto
         $reference->isReference = true;
         return $reference;
     }
+
+    /**
+     * Make an Anonymous entity.
+     *
+     * Static method to create basic anonymous entity (id set to object type)
+     * Additional information can be added with getters/setters though caution
+     * should be depending on the required level of anonymity
+     *
+     * @return $this|Entity
+     */
+    public static function makeAnonymous() {
+        $anonymous = new static('');
+        $anonymous->setId('http://purl.imsglobal.org/caliper/'.$anonymous->getType()->jsonSerialize());
+        return $anonymous;
+    }
 }
 

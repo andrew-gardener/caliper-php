@@ -3,9 +3,9 @@ namespace IMSGlobal\Caliper\entities\agent;
 
 use IMSGlobal\Caliper\entities;
 
-class Person extends Agent implements entities\foaf\Agent {
+class Agent extends entities\Entity implements entities\foaf\Agent {
     public function __construct($id) {
         parent::__construct($id);
-        $this->setType(new entities\EntityType(entities\EntityType::PERSON));
+        $this->setType(new entities\EntityType(entities\EntityType::AGENT));
     }
 }

@@ -69,10 +69,6 @@ class EventToolLaunchLaunchedTest extends CaliperTestCase {
                         ->setStartedAtTime(
                             new \DateTime('2018-11-15T10:00:00.000Z'))
                 )
-                ->setTarget(
-                    (new LtiLink('https://tool.com/link/123'))
-                        ->setMessageType('LtiResourceLinkRequest')
-                )
                 ->setFederatedSession(
                     (new LtiSession('https://example.edu/lti/sessions/b533eb02823f31024e6b7f53436c42fb99b31241'))
                         ->setUser(

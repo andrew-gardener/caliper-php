@@ -5,7 +5,6 @@ use IMSGlobal\Caliper\entities\DigitalResource;
 use IMSGlobal\Caliper\entities\agent\SoftwareApplication;
 use IMSGlobal\Caliper\entities\link\Link;
 use IMSGlobal\Caliper\entities\link\LtiLink;
-use IMSGlobal\Caliper\entities\Targetable;
 use IMSGlobal\Caliper\entities\Generatable;
 
 class ToolLaunchEvent extends Event {

@@ -1,8 +1,6 @@
 <?php
 require_once 'CaliperTestCase.php';
 
-use IMSGlobal\Caliper\entities\SystemIdentifier;
-use IMSGlobal\Caliper\entities\SystemIdentifierType;
 use IMSGlobal\Caliper\entities\lis\CourseOffering;
 
 

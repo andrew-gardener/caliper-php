@@ -4,9 +4,7 @@ require_once 'CaliperTestCase.php';
 use IMSGlobal\Caliper\entities\feedback\Rating;
 use IMSGlobal\Caliper\entities\question\RatingScaleQuestion;
 use IMSGlobal\Caliper\entities\scale\MultiselectScale;
-use IMSGlobal\Caliper\entities\feedback\Comment;
 use IMSGlobal\Caliper\entities\agent\Person;
-use IMSGlobal\Caliper\entities\DigitalResource;
 use IMSGlobal\Caliper\entities\DigitalResourceCollection;
 use IMSGlobal\Caliper\entities\lis\CourseSection;
 

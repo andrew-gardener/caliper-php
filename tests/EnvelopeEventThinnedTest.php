@@ -1,21 +1,13 @@
 <?php
 use IMSGlobal\Caliper\profiles\Profile;
 use IMSGlobal\Caliper\actions\Action;
-use IMSGlobal\Caliper\entities\agent\Organization;
 use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities\agent\SoftwareApplication;
-use IMSGlobal\Caliper\entities\annotation\BookmarkAnnotation;
-use IMSGlobal\Caliper\entities\DigitalResource;
 use IMSGlobal\Caliper\entities\lis\CourseSection;
 use IMSGlobal\Caliper\entities\lis\Membership;
-use IMSGlobal\Caliper\entities\lis\Role;
-use IMSGlobal\Caliper\entities\lis\Status;
-use IMSGlobal\Caliper\entities\reading\Document;
 use IMSGlobal\Caliper\entities\reading\WebPage;
 use IMSGlobal\Caliper\entities\session\Session;
-use IMSGlobal\Caliper\events\AnnotationEvent;
 use IMSGlobal\Caliper\events\NavigationEvent;
-use IMSGlobal\Caliper\events\ViewEvent;
 use IMSGlobal\Caliper\Sensor;
 
 require_once 'CaliperTestCase.php';

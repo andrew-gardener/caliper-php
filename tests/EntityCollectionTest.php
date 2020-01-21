@@ -2,7 +2,6 @@
 require_once 'CaliperTestCase.php';
 
 use IMSGlobal\Caliper\entities\Collection;
-use IMSGlobal\Caliper\entities\Entity;
 use IMSGlobal\Caliper\entities\media\VideoObject;
 
 /**

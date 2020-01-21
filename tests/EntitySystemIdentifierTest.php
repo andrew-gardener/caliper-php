@@ -16,7 +16,7 @@ class EntitySystemIdentifierTest extends CaliperTestCase {
 
         $this->setTestObject(
             (new SystemIdentifier('https://example.edu/users/554433', new SystemIdentifierType(SystemIdentifierType::LTI_USERID)))
-                ->setSource( (new SoftwareApplication('https://example.edu')) ),
+                ->setSource( (new SoftwareApplication('https://example.edu')) )
         );
     }
 }

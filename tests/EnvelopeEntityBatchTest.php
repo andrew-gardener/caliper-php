@@ -67,7 +67,7 @@ class EnvelopeEntityBatchTest extends CaliperTestCase {
                         ->setSubOrganizationOf(new CourseOffering('https://example.edu/terms/201601/courses/7'))
                     )
                     ->setDateCreated(new \DateTime('2016-08-01T06:00:00.000Z'))
-                    ->setDateModified(new \DateTime('2016-09-02T11:30:00.000Z')),
+                    ->setDateModified(new \DateTime('2016-09-02T11:30:00.000Z'))
             ])
         );
     }

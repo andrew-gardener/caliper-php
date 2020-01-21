@@ -10,12 +10,9 @@ use IMSGlobal\Caliper\entities\lis\CourseSection;
 use IMSGlobal\Caliper\entities\lis\Membership;
 use IMSGlobal\Caliper\entities\lis\Role;
 use IMSGlobal\Caliper\entities\lis\Status;
-use IMSGlobal\Caliper\entities\survey\QuestionnaireItem;
-use IMSGlobal\Caliper\entities\question\OpenEndedQuestion;
 use IMSGlobal\Caliper\entities\session\Session;
 use IMSGlobal\Caliper\events\NavigationEvent;
 use IMSGlobal\Caliper\entities\DigitalResourceCollection;
-use IMSGlobal\Caliper\entities\Entity;
 use IMSGlobal\Caliper\entities\media\VideoObject;
 
 
@@ -41,7 +38,7 @@ class EventNavigationNavigatedToCollectionItemTest extends CaliperTestCase {
                         ->setName('Video Collection')
                         ->setKeywords(['collection', 'videos'])
                         ->setDateCreated(new \DateTime('2016-08-01T06:00:00.000Z'))
-                        ->setDateModified(new \DateTime('2016-09-02T11:30:00.000Z')),
+                        ->setDateModified(new \DateTime('2016-09-02T11:30:00.000Z'))
                 )
                 ->setEventTime(
                     new \DateTime('2016-11-15T10:15:00.000Z'))

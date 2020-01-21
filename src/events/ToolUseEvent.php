@@ -48,7 +48,7 @@ class ToolUseEvent extends Event {
      * @param SoftwareApplication $target
      * @return $this|ToolUseEvent
      */
-    public function setTarget(Targetable $target) {
+    public function setTarget($target) {
         if (is_null($target) || ($target instanceof SoftwareApplication)) {
             $this->target = $target;
             return $this;

@@ -49,7 +49,7 @@ class ToolLaunchEvent extends Event {
      * @param Link/LtiLink $target
      * @return $this|ToolLaunchEvent
      */
-    public function setTarget(Targetable $target) {
+    public function setTarget($target) {
         if (is_null($target) || ($target instanceof Link) || ($target instanceof LtiLink)) {
             $this->target = $target;
             return $this;

@@ -5,7 +5,6 @@ namespace IMSGlobal\Caliper\events;
 use IMSGlobal\Caliper\entities\foaf\Agent;
 use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities\survey\Survey;
-use IMSGlobal\Caliper\context\Context;
 
 class SurveyEvent extends Event {
     /** @var Person */
@@ -16,7 +15,6 @@ class SurveyEvent extends Event {
     public function __construct($id = null) {
         parent::__construct($id);
         $this->setType(new EventType(EventType::SURVEY));
-        $this->setContext(new Context(Context::SURVEY_PROFILE_EXTENSION));
     }
 
     /** @return Person object */

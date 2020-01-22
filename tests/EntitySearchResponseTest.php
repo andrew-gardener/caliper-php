@@ -5,8 +5,6 @@ use IMSGlobal\Caliper\entities\search\SearchResponse;
 use IMSGlobal\Caliper\entities\search\Query;
 use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities\agent\SoftwareApplication;
-use IMSGlobal\Caliper\entities\reading\Document;
-use IMSGlobal\Caliper\entities\media\VideoObject;
 
 
 /**

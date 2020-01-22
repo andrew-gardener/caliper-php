@@ -2,7 +2,6 @@
 
 namespace IMSGlobal\Caliper\entities\response;
 
-use IMSGlobal\Caliper\context\Context;
 use IMSGlobal\Caliper\util\TimestampUtil;
 
 class DateTimeResponse extends Response {
@@ -12,7 +11,6 @@ class DateTimeResponse extends Response {
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new ResponseType(ResponseType::DATE_TIME));
-        $this->setContext(new Context(Context::SURVEY_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

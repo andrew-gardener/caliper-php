@@ -1,11 +1,9 @@
 <?php
 
 namespace IMSGlobal\Caliper\events;
-use IMSGlobal\Caliper\entities\agent\SoftwareApplication;
 use IMSGlobal\Caliper\entities\feedback\Rating;
 use IMSGlobal\Caliper\entities\feedback\Comment;
 use IMSGlobal\Caliper\entities\Generatable;
-use IMSGlobal\Caliper\context\Context;
 
 
 class FeedbackEvent extends Event {
@@ -15,7 +13,6 @@ class FeedbackEvent extends Event {
     public function __construct($id = null) {
         parent::__construct($id);
         $this->setType(new EventType(EventType::FEEDBACK));
-        $this->setContext(new Context(Context::FEEDBACK_PROFILE_EXTENSION));
     }
 
     /** @return Rating|Comment|null generated */

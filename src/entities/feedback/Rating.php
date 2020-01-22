@@ -6,7 +6,6 @@ use IMSGlobal\Caliper\entities\Entity;
 use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities\question\Question;
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 
 class Rating extends Entity implements entities\Referrable, entities\Generatable {
     /** @var Person */
@@ -23,7 +22,6 @@ class Rating extends Entity implements entities\Referrable, entities\Generatable
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::RATING));
-        $this->setContext(new Context(Context::FEEDBACK_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

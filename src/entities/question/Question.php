@@ -4,7 +4,6 @@ namespace IMSGlobal\Caliper\entities\question;
 
 use IMSGlobal\Caliper\entities\DigitalResource;
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 
 class Question extends DigitalResource {
     /** @var string */
@@ -13,7 +12,6 @@ class Question extends DigitalResource {
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::QUESTION));
-        $this->setContext(new Context(Context::FEEDBACK_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

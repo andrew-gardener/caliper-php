@@ -2,10 +2,8 @@
 
 namespace IMSGlobal\Caliper\entities\question;
 
-use IMSGlobal\Caliper\entities\DigitalResource;
 use IMSGlobal\Caliper\entities\scale\Scale;
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 
 class RatingScaleQuestion extends Question {
     /** @var Scale */
@@ -14,7 +12,6 @@ class RatingScaleQuestion extends Question {
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::RATING_SCALE_QUESTION));
-        $this->setContext(new Context(Context::FEEDBACK_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

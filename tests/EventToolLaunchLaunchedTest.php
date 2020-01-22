@@ -1,6 +1,7 @@
 <?php
 require_once 'CaliperTestCase.php';
 
+use IMSGlobal\Caliper\profiles\Profile;
 use IMSGlobal\Caliper\actions\Action;
 use IMSGlobal\Caliper\entities\agent\Organization;
 use IMSGlobal\Caliper\entities\agent\Person;
@@ -9,11 +10,9 @@ use IMSGlobal\Caliper\entities\lis\CourseSection;
 use IMSGlobal\Caliper\entities\lis\Membership;
 use IMSGlobal\Caliper\entities\lis\Role;
 use IMSGlobal\Caliper\entities\lis\Status;
-use IMSGlobal\Caliper\entities\reading\Document;
 use IMSGlobal\Caliper\entities\session\LtiSession;
 use IMSGlobal\Caliper\entities\session\Session;
 use IMSGlobal\Caliper\entities\reading\WebPage;
-use IMSGlobal\Caliper\entities\link\LtiLink;
 use IMSGlobal\Caliper\events\ToolLaunchEvent;
 
 
@@ -30,6 +29,8 @@ class EventToolLaunchLaunchedTest extends CaliperTestCase {
                 ->setActor(
                     (new Person('https://example.edu/users/554433'))
                 )
+                ->setProfile(
+                    new Profile(Profile::TOOL_LAUNCH))
                 ->setAction(
                     new Action(Action::LAUNCHED))
                 ->setObject(
@@ -65,10 +66,6 @@ class EventToolLaunchLaunchedTest extends CaliperTestCase {
                     (new Session('https://example.edu/sessions/1f6442a482de72ea6ad134943812bff564a76259'))
                         ->setStartedAtTime(
                             new \DateTime('2018-11-15T10:00:00.000Z'))
-                )
-                ->setTarget(
-                    (new LtiLink('https://tool.com/link/123'))
-                        ->setMessageType('LtiResourceLinkRequest')
                 )
                 ->setFederatedSession(
                     (new LtiSession('https://example.edu/lti/sessions/b533eb02823f31024e6b7f53436c42fb99b31241'))

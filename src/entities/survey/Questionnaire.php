@@ -4,7 +4,6 @@ namespace IMSGlobal\Caliper\entities\survey;
 
 use IMSGlobal\Caliper\entities\DigitalResourceCollection;
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 
 class Questionnaire extends entities\DigitalResourceCollection {
     /** @var QuestionnaireItem[]|null */
@@ -13,7 +12,6 @@ class Questionnaire extends entities\DigitalResourceCollection {
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::QUESTIONNAIRE));
-        $this->setContext(new Context(Context::SURVEY_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

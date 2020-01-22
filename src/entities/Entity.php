@@ -18,6 +18,8 @@ class Entity extends ClassUtil implements \JsonSerializable, entities\schemadoto
     private $type;
     /** @var string */
     private $name;
+    /** @var SystemIdentifier[]|null */
+    private $otherIdentifiers;
     /** @var string */
     private $description;
     /** @var \array[] */
@@ -49,6 +51,7 @@ class Entity extends ClassUtil implements \JsonSerializable, entities\schemadoto
             'id' => $this->getId(),
             'type' => $this->getType(),
             'name' => $this->getName(),
+            'otherIdentifiers' => $this->getOtherIdentifiers(),
             'description' => $this->getDescription(),
             'extensions' => $this->getExtensions(),
             'dateCreated' => util\TimestampUtil::formatTimeISO8601MillisUTC($this->getDateCreated()),
@@ -135,6 +138,35 @@ class Entity extends ClassUtil implements \JsonSerializable, entities\schemadoto
         return $this;
     }
 
+    /**
+     * @return SystemIdentifier[]
+     */
+    public function getOtherIdentifiers() {
+        return $this->otherIdentifiers;
+    }
+
+    /**
+     * @param SystemIdentifier[]|null $otherIdentifiers
+     * @throws \InvalidArgumentException array of SystemIdentifier required
+     * @return $this|Entity
+     */
+    public function setOtherIdentifiers($otherIdentifiers) {
+        if (!is_null($otherIdentifiers)) {
+            if (!is_array($otherIdentifiers)) {
+                $otherIdentifiers = [$otherIdentifiers];
+            }
+
+            foreach ($otherIdentifiers as $aOtherIdentifier) {
+                if (!($aOtherIdentifier instanceof SystemIdentifier)) {
+                    throw new \InvalidArgumentException( __METHOD__ . ': array of SystemIdentifier expected');
+                }
+            }
+        }
+
+        $this->otherIdentifiers = $otherIdentifiers;
+        return $this;
+    }
+
     /** @return string description */
     public function getDescription() {
         return $this->description;
@@ -215,6 +247,21 @@ class Entity extends ClassUtil implements \JsonSerializable, entities\schemadoto
         $reference = clone $this;
         $reference->isReference = true;
         return $reference;
+    }
+
+    /**
+     * Make an Anonymous entity.
+     *
+     * Static method to create basic anonymous entity (id set to object type)
+     * Additional information can be added with getters/setters though caution
+     * should be depending on the required level of anonymity
+     *
+     * @return $this|Entity
+     */
+    public static function makeAnonymous() {
+        $anonymous = new static('');
+        $anonymous->setId('http://purl.imsglobal.org/caliper/'.$anonymous->getType()->jsonSerialize());
+        return $anonymous;
     }
 }
 

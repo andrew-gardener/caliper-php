@@ -3,7 +3,6 @@ namespace IMSGlobal\Caliper\entities\measure;
 
 use IMSGlobal\Caliper\entities\Collection;
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 
 class AggregateMeasureCollection extends Collection implements entities\Generatable {
     /** @var AggregateMeasure[]|null */
@@ -12,7 +11,6 @@ class AggregateMeasureCollection extends Collection implements entities\Generata
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::AGGREGATE_MEASURE_COLLECTION));
-        $this->setContext(new Context(Context::TOOL_USE_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

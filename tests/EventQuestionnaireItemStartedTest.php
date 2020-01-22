@@ -1,6 +1,7 @@
 <?php
 require_once 'CaliperTestCase.php';
 
+use IMSGlobal\Caliper\profiles\Profile;
 use IMSGlobal\Caliper\actions\Action;
 use IMSGlobal\Caliper\entities\agent\Organization;
 use IMSGlobal\Caliper\entities\agent\Person;
@@ -14,7 +15,6 @@ use IMSGlobal\Caliper\entities\question\RatingScaleQuestion;
 use IMSGlobal\Caliper\entities\scale\LikertScale;
 use IMSGlobal\Caliper\entities\session\Session;
 use IMSGlobal\Caliper\events\QuestionnaireItemEvent;
-use IMSGlobal\Caliper\context\Context;
 
 
 /**
@@ -30,17 +30,17 @@ class EventQuestionnaireItemStartedTest extends CaliperTestCase {
                 ->setActor(
                     (new Person('https://example.edu/users/554433'))
                 )
+                ->setProfile(
+                    new Profile(Profile::SURVEY))
                 ->setAction(
                     new Action(Action::STARTED))
                 ->setObject(
                     (new QuestionnaireItem('https://example.edu/surveys/100/questionnaires/30/items/1'))
                         ->setQuestion(
                             (new RatingScaleQuestion('https://example.edu/surveys/100/questionnaires/30/items/1/question'))
-                                ->setContext(new Context(Context::SURVEY_PROFILE_EXTENSION))
                                 ->setQuestionPosed('How satisfied are you with our services?')
                                 ->setScale(
                                     (new LikertScale('https://example.edu/scale/2'))
-                                        ->setContext(new Context(Context::SURVEY_PROFILE_EXTENSION))
                                         ->setScalePoints(4)
                                         ->setItemLabels(['Strongly Disagree', 'Disagree', 'Agree', 'Strongly Agree'])
                                         ->setItemValues(['-2', '-1', '1', '2'])

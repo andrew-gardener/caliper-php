@@ -5,7 +5,6 @@ namespace IMSGlobal\Caliper\entities\survey;
 use IMSGlobal\Caliper\entities\Entity;
 use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 use IMSGlobal\Caliper\util\TimestampUtil;
 
 class SurveyInvitation extends Entity {
@@ -21,7 +20,6 @@ class SurveyInvitation extends Entity {
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::SURVEY_INVITATION));
-        $this->setContext(new Context(Context::SURVEY_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

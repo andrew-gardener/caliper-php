@@ -2,6 +2,7 @@
 
 namespace IMSGlobal\Caliper\events;
 
+use IMSGlobal\Caliper\profiles;
 use IMSGlobal\Caliper\actions;
 use IMSGlobal\Caliper\context;
 use IMSGlobal\Caliper\entities;
@@ -14,6 +15,8 @@ class Event extends util\ClassUtil implements \JsonSerializable {
     private $type;
     /** @var entities\foaf\Agent */
     private $actor;
+    /** @var profiles\Profile */
+    protected $profile;
     /** @var actions\Action */
     private $action;
     /** @var entities\Entity */
@@ -56,6 +59,7 @@ class Event extends util\ClassUtil implements \JsonSerializable {
             '@context' => $this->getContext(),
             'type' => $this->getType(),
             'actor' => $this->getActor(),
+            'profile' => $this->getProfile(),
             'action' => $this->getAction(),
             'object' => $this->getObject(),
             'target' => $this->getTarget(),
@@ -140,6 +144,20 @@ class Event extends util\ClassUtil implements \JsonSerializable {
         return $this;
     }
 
+    /** @return profiles\Profile|null profile */
+    public function getProfile() {
+        return $this->profile;
+    }
+
+    /**
+     * @param profiles\Profile|null $profile
+     * @return $this|Event
+     */
+    public function setProfile(profiles\Profile $profile) {
+        $this->profile = $profile;
+        return $this;
+    }
+
     /** @return actions\Action action */
     public function getAction() {
         return $this->action;
@@ -173,18 +191,22 @@ class Event extends util\ClassUtil implements \JsonSerializable {
         throw new \InvalidArgumentException(__METHOD__ . ': Entity expected');
     }
 
-    /** @return entities\Targetable target */
+    /** @return entities\Targetable|null target */
     public function getTarget() {
         return $this->target;
     }
 
     /**
-     * @param entities\Targetable $target
+     * @param entities\Targetable|null $target
      * @return $this|Event
      */
-    public function setTarget(entities\Targetable $target) {
-        $this->target = $target;
-        return $this;
+    public function setTarget($target) {
+        if (is_null($target) || ($target instanceof entities\Targetable)) {
+            $this->target = $target;
+            return $this;
+        }
+
+        throw new \InvalidArgumentException(__METHOD__ . ': Targetable expected');
     }
 
     /** @return entities\Generatable generated */

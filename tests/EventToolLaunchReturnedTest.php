@@ -1,6 +1,7 @@
 <?php
 require_once 'CaliperTestCase.php';
 
+use IMSGlobal\Caliper\profiles\Profile;
 use IMSGlobal\Caliper\actions\Action;
 use IMSGlobal\Caliper\entities\agent\Organization;
 use IMSGlobal\Caliper\entities\agent\Person;
@@ -9,7 +10,6 @@ use IMSGlobal\Caliper\entities\lis\CourseSection;
 use IMSGlobal\Caliper\entities\lis\Membership;
 use IMSGlobal\Caliper\entities\lis\Role;
 use IMSGlobal\Caliper\entities\lis\Status;
-use IMSGlobal\Caliper\entities\reading\Document;
 use IMSGlobal\Caliper\entities\session\LtiSession;
 use IMSGlobal\Caliper\entities\session\Session;
 use IMSGlobal\Caliper\entities\link\LtiLink;
@@ -30,6 +30,8 @@ class EventToolLaunchReturnedTest extends CaliperTestCase {
                 ->setActor(
                     (new Person('https://example.edu/users/554433'))
                 )
+                ->setProfile(
+                    new Profile(Profile::TOOL_LAUNCH))
                 ->setAction(
                     new Action(Action::RETURNED))
                 ->setObject(

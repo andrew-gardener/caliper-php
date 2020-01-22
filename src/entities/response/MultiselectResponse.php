@@ -2,8 +2,6 @@
 
 namespace IMSGlobal\Caliper\entities\response;
 
-use IMSGlobal\Caliper\context\Context;
-
 class MultiselectResponse extends Response {
     /** @var string[] */
     private $selections;
@@ -11,7 +9,6 @@ class MultiselectResponse extends Response {
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new ResponseType(ResponseType::MULTISELECT));
-        $this->setContext(new Context(Context::SURVEY_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

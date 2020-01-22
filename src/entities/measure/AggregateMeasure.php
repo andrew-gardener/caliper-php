@@ -3,7 +3,6 @@ namespace IMSGlobal\Caliper\entities\measure;
 
 use IMSGlobal\Caliper\entities\Entity;
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 use IMSGlobal\Caliper\util\TimestampUtil;
 
 class AggregateMeasure extends Entity {
@@ -21,7 +20,6 @@ class AggregateMeasure extends Entity {
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new  entities\EntityType( entities\EntityType::AGGREGATE_MEASURE));
-        $this->setContext(new Context(Context::TOOL_USE_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

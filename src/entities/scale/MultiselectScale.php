@@ -3,7 +3,6 @@
 namespace IMSGlobal\Caliper\entities\scale;
 
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\context\Context;
 
 class MultiselectScale extends Scale {
     /** @var int[] */
@@ -22,7 +21,6 @@ class MultiselectScale extends Scale {
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::MULTISELECT_SCALE));
-        $this->setContext(new Context(Context::FEEDBACK_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

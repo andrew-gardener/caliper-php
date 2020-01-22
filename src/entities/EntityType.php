@@ -65,6 +65,7 @@ class EntityType extends \IMSGlobal\Caliper\util\BasicEnum implements Type {
         SOFTWARE_APPLICATION = 'SoftwareApplication',
         SURVEY = 'Survey',
         SURVEY_INVITATION = 'SurveyInvitation',
+        SYSTEM_IDENTIFIER = 'SystemIdentifier',
         TAG_ANNOTATION = 'TagAnnotation',
         THREAD = 'Thread',
         TRUEFALSE = 'TrueFalseResponse',

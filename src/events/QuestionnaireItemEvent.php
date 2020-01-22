@@ -7,7 +7,6 @@ use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities\Generatable;
 use IMSGlobal\Caliper\entities\survey\QuestionnaireItem;
 use IMSGlobal\Caliper\entities\response\Response;
-use IMSGlobal\Caliper\context\Context;
 
 class QuestionnaireItemEvent extends Event {
     /** @var Person */
@@ -20,7 +19,6 @@ class QuestionnaireItemEvent extends Event {
     public function __construct($id = null) {
         parent::__construct($id);
         $this->setType(new EventType(EventType::QUESTIONNAIRE_ITEM));
-        $this->setContext(new Context(Context::SURVEY_PROFILE_EXTENSION));
     }
 
     /** @return Person object */

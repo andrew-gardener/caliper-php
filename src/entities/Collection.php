@@ -1,16 +1,13 @@
 <?php
 namespace IMSGlobal\Caliper\entities;
 
-use IMSGlobal\Caliper\context\Context;
-
-class Collection extends Entity {
+class Collection extends Entity implements Collectable {
     /** @var Entity[]|null */
     private $items;
 
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new EntityType(EntityType::COLLECTION));
-        $this->setContext(new Context(Context::TOOL_USE_PROFILE_EXTENSION));
     }
 
     public function jsonSerialize() {

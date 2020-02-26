@@ -1,12 +1,11 @@
 <?php
-require_once __DIR__ . '/../CaliperTestCase.php';
+require_once 'CaliperTestCase.php';
 
 use IMSGlobal\Caliper\entities\measure\AggregateMeasure;
 use IMSGlobal\Caliper\entities\measure\Metric;
 
 class EnvelopeTermMetricTest extends CaliperTestCase {
     function setUp() {
-        $this->setFixtureRelativeSubDirectoryPath('/constantsFixtures');
         parent::setUp();
 
         $metrics = array(
@@ -23,7 +22,8 @@ class EnvelopeTermMetricTest extends CaliperTestCase {
         $data = array();
         foreach ($metrics as $metric) {
             $data[]= ( AggregateMeasure::makeAnonymous() )
-                ->setMetric( $metric );
+                ->setMetric( $metric )
+                ->setMetricValue( 12.0 );
         }
 
         $this->setTestObject((new \IMSGlobal\Caliper\request\Envelope())

@@ -1,12 +1,14 @@
 <?php
-require_once __DIR__ . '/../CaliperTestCase.php';
+require_once 'CaliperTestCase.php';
 
 use IMSGlobal\Caliper\entities\lis\Role;
+use IMSGlobal\Caliper\entities\lis\Status;
 use IMSGlobal\Caliper\entities\lis\Membership;
+use IMSGlobal\Caliper\entities\lis\CourseOffering;
+use IMSGlobal\Caliper\entities\agent\Person;
 
 class EnvelopeTermLISRoleTest extends CaliperTestCase {
     function setUp() {
-        $this->setFixtureRelativeSubDirectoryPath('/constantsFixtures');
         parent::setUp();
 
         $role_sets = array(
@@ -78,6 +80,9 @@ class EnvelopeTermLISRoleTest extends CaliperTestCase {
         $data = array();
         foreach ($role_sets as $role_set) {
             $data[]= ( Membership::makeAnonymous() )
+                ->setMember( Person::makeAnonymous()->makeReference() )
+                ->setOrganization( CourseOffering::makeAnonymous()->makeReference() )
+                ->setStatus( new Status(Status::ACTIVE) )
                 ->setRoles( $role_set );
         }
 

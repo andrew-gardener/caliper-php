@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../CaliperTestCase.php';
+require_once 'CaliperTestCase.php';
 
 use IMSGlobal\Caliper\actions\Action;
 use IMSGlobal\Caliper\events\Event;
@@ -8,7 +8,6 @@ use IMSGlobal\Caliper\entities\Entity;
 
 class EnvelopeTermActionTest extends CaliperTestCase {
     function setUp() {
-        $this->setFixtureRelativeSubDirectoryPath('/constantsFixtures');
         parent::setUp();
 
         $actions = array(

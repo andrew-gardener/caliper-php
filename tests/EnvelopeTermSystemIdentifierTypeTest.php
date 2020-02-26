@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../CaliperTestCase.php';
+require_once 'CaliperTestCase.php';
 
 use IMSGlobal\Caliper\entities\Entity;
 use IMSGlobal\Caliper\entities\SystemIdentifier;
@@ -7,11 +7,11 @@ use IMSGlobal\Caliper\entities\SystemIdentifierType;
 
 class EnvelopeTermSystemIdentifierTypeTest extends CaliperTestCase {
     function setUp() {
-        $this->setFixtureRelativeSubDirectoryPath('/constantsFixtures');
         parent::setUp();
 
         $system_identifiers = array(
             new SystemIdentifier('root',  new SystemIdentifierType(SystemIdentifierType::ACCOUNT_USERNAME)),
+            new SystemIdentifier('https://salt-demo.edplancms.com/ims/case/v1p0/CFItems/04bc8e7e-36d3-4078-bed5-e33e9de98d5c',  new SystemIdentifierType(SystemIdentifierType::CASE_ITEM_URI)),
             new SystemIdentifier('jane@example.edu', new SystemIdentifierType(SystemIdentifierType::EMAIL_ADDRESS)),
             new SystemIdentifier('example.edu:SI182-F16', new SystemIdentifierType(SystemIdentifierType::LIS_SOURCED_ID)),
             new SystemIdentifier('example.edu:CI182-S16', new SystemIdentifierType(SystemIdentifierType::LTI_CONTEXT_ID)),

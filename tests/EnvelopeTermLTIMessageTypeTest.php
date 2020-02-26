@@ -1,12 +1,11 @@
 <?php
-require_once __DIR__ . '/../CaliperTestCase.php';
+require_once 'CaliperTestCase.php';
 
 use IMSGlobal\Caliper\entities\link\LtiLink;
 use IMSGlobal\Caliper\entities\LTIMessageType;
 
 class EnvelopeTermLTIMessageTypeTest extends CaliperTestCase {
     function setUp() {
-        $this->setFixtureRelativeSubDirectoryPath('/constantsFixtures');
         parent::setUp();
 
         $message_types = array(

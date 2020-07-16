@@ -14,18 +14,10 @@
     }
   ],
   "require": {
-    "php": ">=5.4.0"
+    "php": ">=7.3.0"
   },
-  "require-comments": [
-    "Requirement 'php' will be updated to '>=5.6.6' ASAP, to support:",
-    [
-      "Math with constants",
-      "`JSON_PRESERVE_ZERO_FRACTION` constant",
-      "`::class` property to get class names"
-    ]
-  ],
   "require-dev": {
-    "phpunit/phpunit": "5.7.*"
+    "phpunit/phpunit": "9.*.*"
   },
   "autoload": {
     "psr-4": {

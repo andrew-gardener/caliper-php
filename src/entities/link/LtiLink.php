@@ -3,9 +3,10 @@
 namespace IMSGlobal\Caliper\entities\link;
 
 use IMSGlobal\Caliper\entities;
+use IMSGlobal\Caliper\entities\LTIMessageType;
 
 class LtiLink extends entities\DigitalResource implements entities\Referrable, entities\Targetable {
-    /** @var string */
+    /** @var LTIMessageType */
     private $messageType;
 
     public function __construct($id) {
@@ -21,21 +22,21 @@ class LtiLink extends entities\DigitalResource implements entities\Referrable, e
         ]));
     }
 
-    /** @return string messageType */
+    /** @return LTIMessageType|null messageType */
     public function getMessageType() {
         return $this->messageType;
     }
 
     /**
-     * @param string $messageType
+     * @param LTIMessageType|null $messageType
      * @return $this|LtiLink
      */
     public function setMessageType($messageType) {
-        if (!is_null($messageType) && !is_string($messageType)) {
-            throw new \InvalidArgumentException(__METHOD__ . ': string expected');
+        if (is_null($messageType) || ($messageType instanceof LTIMessageType)) {
+            $this->messageType = $messageType;
+            return $this;
         }
 
-        $this->messageType = strval($messageType);
-        return $this;
+        throw new \InvalidArgumentException(__METHOD__ . ': LTIMessageType expected');
     }
 }

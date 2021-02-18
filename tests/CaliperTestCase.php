@@ -14,6 +14,8 @@ class CaliperTestCase extends PHPUnit_Framework_TestCase {
     /** @var string */
     protected $fixtureDirectoryPath = false;
     /** @var string */
+    protected $fixtureRelativeSubDirectoryPath = '';
+    /** @var string */
     protected $fixtureFilePath = false;
     /** @var object */
     private $testObject = null;
@@ -30,7 +32,7 @@ class CaliperTestCase extends PHPUnit_Framework_TestCase {
         date_default_timezone_set(self::DEFAULT_TIMEZONE);
 
         $this->setCalledClass(get_called_class());
-        $this->setFixtureDirectoryPath(self::FIXTURE_DIRECTORY_PATH);
+        $this->setFixtureDirectoryPath(self::FIXTURE_DIRECTORY_PATH.$this->getFixtureRelativeSubDirectoryPath());
         $this->setFixtureFilePath($this->makeFixturePathFromClassName($this->getCalledClass()));
 
         $outputDirectoryPath = getenv('PHPUNIT_OUTPUT_DIR');
@@ -80,6 +82,20 @@ class CaliperTestCase extends PHPUnit_Framework_TestCase {
      */
     public function setFixtureDirectoryPath($fixtureDirectoryPath) {
         $this->fixtureDirectoryPath = strval($fixtureDirectoryPath);
+        return $this;
+    }
+
+    /** @return string */
+    public function getFixtureRelativeSubDirectoryPath() {
+        return $this->fixtureRelativeSubDirectoryPath;
+    }
+
+    /**
+     * @param string $fixtureRelativeSubDirectoryPath
+     * @return $this
+     */
+    public function setFixtureRelativeSubDirectoryPath($fixtureRelativeSubDirectoryPath) {
+        $this->fixtureRelativeSubDirectoryPath = strval($fixtureRelativeSubDirectoryPath);
         return $this;
     }
 

@@ -28,10 +28,10 @@ class ApiTest extends \PHPUnit\Framework\TestCase {
 
     function testSend() {
         $caliperEvent = new IMSGlobal\Caliper\events\Event();
-        $caliperEvent->setAction("HILIGHT");
+        $caliperEvent->setAction('HILIGHT');
         $caliperEvent->setLearningContext([
-            "courseId" => "course-1234",
-            "userId" => "user-1234",
+            'courseId' => 'course-1234',
+            'userId' => 'user-1234',
         ]);
 
         $sent = IMSGlobal\Caliper\Sensor::send($caliperEvent);

@@ -37,8 +37,7 @@ class Assessment extends AssignableDigitalResource {
 
             foreach ($items as $item)
                 if (!($item instanceof AssessmentItem))
-                    // FIXME: After PHP 5.5 is a requirement, change "IMSGlobal\Caliper\entities\foaf\Agent" string to "::class".
-                    throw new \InvalidArgumentException(__METHOD__ . ': array of \IMSGlobal\Caliper\entities\assessment\AssessmentItem expected');
+                    throw new \InvalidArgumentException(__METHOD__ . ': array of AssessmentItem expected');
         }
 
         $this->items = $items;

@@ -29,6 +29,9 @@ class BookmarkAnnotation extends Annotation {
      * @return $this|BookmarkAnnotation
      */
     public function setBookmarkNotes($bookmarkNotes) {
+        if (!is_string($bookmarkNotes)) {
+            throw new \InvalidArgumentException(__METHOD__ . ': string expected');
+        }
         $this->bookmarkNotes = $bookmarkNotes;
         return $this;
     }

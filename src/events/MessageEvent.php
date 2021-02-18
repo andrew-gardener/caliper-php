@@ -24,7 +24,7 @@ class MessageEvent extends Event {
      * @return $this|MessageEvent
      */
     public function setObject($object) {
-        if (is_null($object) || ($object instanceof Message)) {
+        if ($object instanceof Message) {
             $this->object = $object;
             return $this;
         }

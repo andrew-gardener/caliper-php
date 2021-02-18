@@ -4,10 +4,10 @@ namespace IMSGlobal\Caliper\entities\agent;
 
 use IMSGlobal\Caliper\entities;
 
-class Organization extends Agent implements entities\foaf\Agent, entities\w3c\Organization {
-    /** @var entities\w3c\Organization */
+class Organization extends Agent implements entities\w3c\Organization {
+    /** @var entities\agent\Organization */
     private $subOrganizationOf;
-    /** @var entities\foaf\Agent[] */
+    /** @var entities\agent\Agent[] */
     private $members;
 
     public function __construct($id) {
@@ -25,13 +25,13 @@ class Organization extends Agent implements entities\foaf\Agent, entities\w3c\Or
 
     }
 
-    /** @return entities\foaf\Agent[] */
+    /** @return entities\agent\Agent[] */
     public function getMembers() {
         return $this->members;
     }
 
     /**
-     * @param entities\foaf\Agent[] $members
+     * @param entities\agent\Agent[] $members
      * @return $this|Organization
      */
     public function setMembers($members) {
@@ -41,7 +41,7 @@ class Organization extends Agent implements entities\foaf\Agent, entities\w3c\Or
             }
 
             foreach ($members as $member) {
-                if (!($member instanceof entities\foaf\Agent)) {
+                if (!($member instanceof entities\agent\Agent)) {
                     throw new \InvalidArgumentException(__METHOD__ . ': array of Agent expected');
                 }
             }
@@ -51,16 +51,16 @@ class Organization extends Agent implements entities\foaf\Agent, entities\w3c\Or
         return $this;
     }
 
-    /** @return entities\w3c\Organization */
+    /** @return entities\agent\Organization */
     public function getSubOrganizationOf() {
         return $this->subOrganizationOf;
     }
 
     /**
-     * @param entities\w3c\Organization $subOrganizationOf
+     * @param entities\agent\Organization $subOrganizationOf
      * @return $this|Organization
      */
-    public function setSubOrganizationOf(entities\w3c\Organization $subOrganizationOf) {
+    public function setSubOrganizationOf(entities\agent\Organization $subOrganizationOf) {
         $this->subOrganizationOf = $subOrganizationOf;
         return $this;
     }

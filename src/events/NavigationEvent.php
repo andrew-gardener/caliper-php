@@ -8,12 +8,15 @@ use IMSGlobal\Caliper\entities;
 use IMSGlobal\Caliper\entities\DigitalResource;
 use IMSGlobal\Caliper\entities\survey\Questionnaire;
 use IMSGlobal\Caliper\entities\survey\QuestionnaireItem;
+use IMSGlobal\Caliper\entities\agent\SoftwareApplication;
 
 class NavigationEvent extends Event {
     /** @var DigitalResource */
     private $object;
-    /** @var entities\DigitalResource */
+    /** @var DigitalResource */
     private $target;
+    /** @var DigitalResource|SoftwareApplication */
+    private $referrer;
 
     public function __construct($id = null) {
         parent::__construct($id);
@@ -32,7 +35,7 @@ class NavigationEvent extends Event {
      * @return $this|NavigationEvent
      */
     public function setObject($object) {
-        if (is_null($object) || ($object instanceof DigitalResource)) {
+        if ($object instanceof DigitalResource) {
             $this->object = $object;
             if ($this->profile === profiles\Profile::SURVEY) {
                 if (!$object instanceof Questionnaire && !$object instanceof QuestionnaireItem) {
@@ -45,14 +48,14 @@ class NavigationEvent extends Event {
         throw new \InvalidArgumentException(__METHOD__ . ': DigitalResource expected');
     }
 
-    /** @return entities\DigitalResource|null target */
+    /** @return DigitalResource|null target */
     public function getTarget() {
         return $this->target;
     }
 
     /**
-     * @param entities\DigitalResource|null $target
-     * @return $this|Event
+     * @param DigitalResource|null $target
+     * @return $this|NavigationEvent
      */
     public function setTarget($target) {
         if (is_null($target) || ($target instanceof DigitalResource)) {
@@ -61,5 +64,23 @@ class NavigationEvent extends Event {
         }
 
         throw new \InvalidArgumentException(__METHOD__ . ': DigitalResource expected');
+    }
+
+    /** @return DigitalResource|SoftwareApplication */
+    public function getReferrer() {
+        return $this->referrer;
+    }
+
+    /**
+     * @param DigitalResource|SoftwareApplication $referrer
+     * @return $this|NavigationEvent
+     */
+    public function setReferrer($referrer) {
+        if (is_null($referrer) || $referrer instanceof DigitalResource || $referrer instanceof SoftwareApplication) {
+            $this->referrer = $referrer;
+            return $this;
+        }
+
+        throw new \InvalidArgumentException(__METHOD__ . ': DigitalResource or SoftwareApplication expected');
     }
 }

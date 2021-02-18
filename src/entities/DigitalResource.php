@@ -2,7 +2,7 @@
 
 namespace IMSGlobal\Caliper\entities;
 
-use IMSGlobal\Caliper\entities\foaf\Agent;
+use IMSGlobal\Caliper\entities\agent\Agent;
 use IMSGlobal\Caliper\entities\schemadotorg\CreativeWork;
 use IMSGlobal\Caliper\util\TimestampUtil;
 
@@ -25,7 +25,7 @@ use IMSGlobal\Caliper\util\TimestampUtil;
  *         as Scheme and Lisp
  *
  */
-class DigitalResource extends Entity implements Referrable, Targetable, Generatable, CreativeWork {
+class DigitalResource extends Entity implements CreativeWork {
     /**
      * @deprecated 1.2 Redundant.  See "@type".
      * @var string[]
@@ -136,9 +136,7 @@ class DigitalResource extends Entity implements Referrable, Targetable, Generata
 
         foreach ($creators as $aCreator) {
             if (!($aCreator instanceof Agent)) {
-                // Using `Agent::className()` here is tricky.  Using static string for expediency.
-                throw new \InvalidArgumentException(
-                    __METHOD__ . ': array of Agent expected');
+                throw new \InvalidArgumentException(__METHOD__ . ': array of Agent expected');
             }
         }
 

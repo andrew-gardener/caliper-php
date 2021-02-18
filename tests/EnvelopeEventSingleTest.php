@@ -29,7 +29,7 @@ class EnvelopeEventSingleTest extends CaliperTestCase {
             ->setSensorId(new Sensor('https://example.edu/sensors/1'))
             ->setSendTime(new \DateTime('2016-11-15T11:05:01.000Z'))
             ->setData([
-                (new AssessmentEvent())
+                (new AssessmentEvent('urn:uuid:c51570e4-f8ed-4c18-bb3a-dfe51b2cc594'))
                     ->setActor((new Person('https://example.edu/users/554433'))
                     )
                     ->setProfile(new Profile(Profile::ASSESSMENT))
@@ -69,8 +69,7 @@ class EnvelopeEventSingleTest extends CaliperTestCase {
                     )
                     ->setSession((new Session('https://example.edu/sessions/1f6442a482de72ea6ad134943812bff564a76259'))
                         ->setStartedAtTime(new \DateTime('2016-11-15T10:00:00.000Z'))
-                    )
-                    ->setId('urn:uuid:c51570e4-f8ed-4c18-bb3a-dfe51b2cc594'),
+                    ),
             ])
         );
     }

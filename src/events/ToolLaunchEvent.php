@@ -5,7 +5,6 @@ use IMSGlobal\Caliper\entities\DigitalResource;
 use IMSGlobal\Caliper\entities\agent\SoftwareApplication;
 use IMSGlobal\Caliper\entities\link\Link;
 use IMSGlobal\Caliper\entities\link\LtiLink;
-use IMSGlobal\Caliper\entities\Generatable;
 
 class ToolLaunchEvent extends Event {
     /** @var SoftwareApplication */
@@ -31,7 +30,7 @@ class ToolLaunchEvent extends Event {
      * @return $this|ToolLaunchEvent
      */
     public function setObject($object) {
-        if (is_null($object) || ($object instanceof SoftwareApplication)) {
+        if ($object instanceof SoftwareApplication) {
             $this->object = $object;
             return $this;
         }
@@ -66,7 +65,7 @@ class ToolLaunchEvent extends Event {
      * @param DigitalResource $generated
      * @return $this|ToolLaunchEvent
      */
-    public function setGenerated(Generatable $generated) {
+    public function setGenerated($generated) {
         if (is_null($generated) || ($generated instanceof DigitalResource)) {
             $this->generated = $generated;
             return $this;

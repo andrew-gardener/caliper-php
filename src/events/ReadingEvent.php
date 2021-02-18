@@ -35,7 +35,7 @@ class ReadingEvent extends Event {
      * @return $this|ReadingEvent
      */
     public function setObject($object) {
-        if (is_null($object) || ($object instanceof DigitalResource)) {
+        if ($object instanceof DigitalResource) {
             $this->object = $object;
             return $this;
         }

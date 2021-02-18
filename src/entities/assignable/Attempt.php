@@ -4,10 +4,10 @@ namespace IMSGlobal\Caliper\entities\assignable;
 
 use IMSGlobal\Caliper\entities;
 use IMSGlobal\Caliper\entities\DigitalResource;
-use IMSGlobal\Caliper\entities\foaf\Agent;
+use IMSGlobal\Caliper\entities\agent\Agent;
 use IMSGlobal\Caliper\util\TimestampUtil;
 
-class Attempt extends entities\Entity implements entities\Generatable {
+class Attempt extends entities\Entity {
     /** @var DigitalResource|null */
     private $assignable;
     /** @var Agent|null */
@@ -115,7 +115,7 @@ class Attempt extends entities\Entity implements entities\Generatable {
             return $this;
         }
 
-        throw new \InvalidArgumentException(__METHOD__ . ': int expected');
+        throw new \InvalidArgumentException(__METHOD__ . ': integer expected');
     }
 
     /** @return \DateTime startedAtTime */

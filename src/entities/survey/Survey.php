@@ -38,7 +38,7 @@ class Survey extends Collection {
             foreach ($items as $item) {
                 if (!($item instanceof Questionnaire)) {
                     throw new \InvalidArgumentException(
-                        __METHOD__ . ': array of ' . Questionnaire::className() . ' expected');
+                        __METHOD__ . ': array of Questionnaire expected');
                 }
             }
         }

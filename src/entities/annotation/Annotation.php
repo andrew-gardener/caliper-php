@@ -4,7 +4,7 @@ namespace IMSGlobal\Caliper\entities\annotation;
 
 use IMSGlobal\Caliper\entities;
 use IMSGlobal\Caliper\entities\DigitalResource;
-use IMSGlobal\Caliper\entities\foaf\Agent;
+use IMSGlobal\Caliper\entities\agent\Agent;
 
 /**
  *         The super-class of all Annotation types.
@@ -13,7 +13,7 @@ use IMSGlobal\Caliper\entities\foaf\Agent;
  *         which are specified in the Caliper Annotation Metric Profile
  *
  */
-class Annotation extends entities\Entity implements entities\Generatable {
+class Annotation extends entities\Entity {
     /** @var Agent|null */
     private $annotator;
     /** @var DigitalResource|null */

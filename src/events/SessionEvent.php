@@ -3,12 +3,17 @@
 namespace IMSGlobal\Caliper\events;
 
 use IMSGlobal\Caliper\actions\Action;
+use IMSGlobal\Caliper\entities\DigitalResource;
 use IMSGlobal\Caliper\entities\agent\SoftwareApplication;
 use IMSGlobal\Caliper\entities\session\Session;
 
 class SessionEvent extends Event {
     /** @var SoftwareApplication|Session */
     private $object;
+    /** @var DigitalResource|SoftwareApplication */
+    private $referrer;
+    /** @var DigitalResource */
+    private $target;
 
     public function __construct($id = null) {
         parent::__construct($id);
@@ -40,9 +45,7 @@ class SessionEvent extends Event {
     public function setObject($object) {
         $action = $this->getAction();
 
-        if (is_null($object)) {
-            $this->object = $object;
-        } elseif (is_null($action)) {
+        if (is_null($action)) {
             throw new \InvalidArgumentException(__METHOD__ . ': Action must be set before Object');
         } elseif ($action == Action::TIMED_OUT) {
             if ($object instanceof Session) {
@@ -59,5 +62,41 @@ class SessionEvent extends Event {
         }
 
         return $this;
+    }
+
+    /** @return DigitalResource|SoftwareApplication */
+    public function getReferrer() {
+        return $this->referrer;
+    }
+
+    /**
+     * @param DigitalResource|SoftwareApplication $referrer
+     * @return $this|SessionEvent
+     */
+    public function setReferrer($referrer) {
+        if (is_null($referrer) || $referrer instanceof DigitalResource || $referrer instanceof SoftwareApplication) {
+            $this->referrer = $referrer;
+            return $this;
+        }
+
+        throw new \InvalidArgumentException(__METHOD__ . ': DigitalResource or SoftwareApplication expected');
+    }
+
+    /** @return DigitalResource|null target */
+    public function getTarget() {
+        return $this->target;
+    }
+
+    /**
+     * @param DigitalResource|null $target
+     * @return $this|SessionEvent
+     */
+    public function setTarget($target) {
+        if (is_null($target) || ($target instanceof DigitalResource)) {
+            $this->target = $target;
+            return $this;
+        }
+
+        throw new \InvalidArgumentException(__METHOD__ . ': DigitalResource expected');
     }
 }

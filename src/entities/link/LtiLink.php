@@ -5,7 +5,7 @@ namespace IMSGlobal\Caliper\entities\link;
 use IMSGlobal\Caliper\entities;
 use IMSGlobal\Caliper\entities\LTIMessageType;
 
-class LtiLink extends entities\DigitalResource implements entities\Referrable, entities\Targetable {
+class LtiLink extends entities\DigitalResource {
     /** @var LTIMessageType */
     private $messageType;
 

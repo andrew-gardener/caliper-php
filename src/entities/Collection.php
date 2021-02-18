@@ -34,7 +34,7 @@ class Collection extends Entity implements Collectable {
             foreach ($items as $item) {
                 if (!($item instanceof Entity)) {
                     throw new \InvalidArgumentException(
-                        __METHOD__ . ': array of ' . Entity::className() . ' expected');
+                        __METHOD__ . ': array of Entity expected');
                 }
             }
         }

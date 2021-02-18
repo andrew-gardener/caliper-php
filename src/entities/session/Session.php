@@ -3,14 +3,14 @@
 namespace IMSGlobal\Caliper\entities\session;
 
 use IMSGlobal\Caliper\entities;
-use IMSGlobal\Caliper\entities\foaf\Agent;
+use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities\agent\SoftwareApplication;
 use IMSGlobal\Caliper\util;
 
-class Session extends entities\Entity implements entities\Generatable, entities\Targetable {
+class Session extends entities\Entity {
     /** @var SoftwareApplication|null */
     private $client;
-    /** @var Agent|null */
+    /** @var Person|null */
     private $user;
     /** @var \DateTime */
     private $startedAtTime;
@@ -55,23 +55,23 @@ class Session extends entities\Entity implements entities\Generatable, entities\
         throw new \InvalidArgumentException(__METHOD__ . ': SoftwareApplication expected');
     }
 
-    /** @return Agent|null user */
+    /** @return Person|null user */
     public function getUser() {
         return $this->user;
     }
 
     /**
-     * @param Agent|null $user
-     * @throws \InvalidArgumentException Agent required
+     * @param Person|null $user
+     * @throws \InvalidArgumentException Person required
      * @return $this|Session
      */
     public function setUser($user) {
-        if (is_null($user) || ($user instanceof Agent)) {
+        if (is_null($user) || ($user instanceof Person)) {
             $this->user = $user;
             return $this;
         }
 
-        throw new \InvalidArgumentException(__METHOD__ . ': Agent expected');
+        throw new \InvalidArgumentException(__METHOD__ . ': Person expected');
     }
 
     /** @return \DateTime startedAtTime */

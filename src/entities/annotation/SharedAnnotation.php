@@ -2,7 +2,7 @@
 
 namespace IMSGlobal\Caliper\entities\annotation;
 
-use IMSGlobal\Caliper\entities\foaf\Agent;
+use IMSGlobal\Caliper\entities\agent\Agent;
 
 class SharedAnnotation extends Annotation {
     /** @var Agent[]|null */

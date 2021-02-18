@@ -4,7 +4,7 @@ namespace IMSGlobal\Caliper\entities\reading;
 
 use IMSGlobal\Caliper\entities;
 
-class Frame extends entities\DigitalResource implements entities\Targetable {
+class Frame extends entities\DigitalResource {
     /** @var int */
     private $index;
 
@@ -32,7 +32,7 @@ class Frame extends entities\DigitalResource implements entities\Targetable {
      */
     public function setIndex($index) {
         if (!is_int($index)) {
-            throw new \InvalidArgumentException(__METHOD__ . ': int expected');
+            throw new \InvalidArgumentException(__METHOD__ . ': integer expected');
         }
 
         $this->index = $index;

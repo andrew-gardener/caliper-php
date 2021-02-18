@@ -4,7 +4,7 @@ namespace IMSGlobal\Caliper\entities\media;
 
 use IMSGlobal\Caliper\entities;
 
-class MediaLocation extends entities\DigitalResource implements entities\Targetable {
+class MediaLocation extends entities\DigitalResource {
     /** @var string|null ISO 8601 interval */
     private $currentTime;
 

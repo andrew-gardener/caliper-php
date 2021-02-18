@@ -13,7 +13,7 @@ class Event extends util\ClassUtil implements \JsonSerializable {
     private $context;
     /** @var EventType */
     private $type;
-    /** @var entities\foaf\Agent */
+    /** @var entities\agent\Agent */
     private $actor;
     /** @var profiles\Profile */
     protected $profile;
@@ -21,11 +21,11 @@ class Event extends util\ClassUtil implements \JsonSerializable {
     private $action;
     /** @var entities\Entity */
     private $object;
-    /** @var entities\Targetable */
+    /** @var entities\Entity */
     private $target;
-    /** @var entities\Generatable */
+    /** @var entities\Entity */
     private $generated;
-    /** @var entities\Referrable */
+    /** @var entities\Entity */
     private $referrer;
     /** @var \DateTime */
     private $eventTime;
@@ -83,11 +83,12 @@ class Event extends util\ClassUtil implements \JsonSerializable {
 
     /**
      * @param string $id
-     * @return Event
+     * @throws \InvalidArgumentException string required
+     * @return $this|Event
      */
     public function setId($id) {
-        if (!is_null($id)) {
-            $id = strval($id);
+        if (!is_string($id)) {
+            throw new \InvalidArgumentException(__METHOD__ . ': string expected');
         }
 
         $this->id = $id;
@@ -130,18 +131,22 @@ class Event extends util\ClassUtil implements \JsonSerializable {
         return $this;
     }
 
-    /** @return entities\foaf\Agent actor */
+    /** @return entities\agent\Agent actor */
     public function getActor() {
         return $this->actor;
     }
 
     /**
-     * @param entities\foaf\Agent $actor
+     * @param entities\agent\Agent $actor
      * @return $this|Event
      */
-    public function setActor(entities\foaf\Agent $actor) {
-        $this->actor = $actor;
-        return $this;
+    public function setActor($actor) {
+        if ($actor instanceof entities\agent\Agent) {
+            $this->actor = $actor;
+            return $this;
+        }
+
+        throw new \InvalidArgumentException(__METHOD__ . ': Agent expected');
     }
 
     /** @return profiles\Profile|null profile */
@@ -183,7 +188,7 @@ class Event extends util\ClassUtil implements \JsonSerializable {
      * @return $this|Event
      */
     public function setObject($object) {
-        if (is_null($object) || ($object instanceof entities\Entity)) {
+        if ($object instanceof entities\Entity) {
             $this->object = $object;
             return $this;
         }
@@ -191,48 +196,48 @@ class Event extends util\ClassUtil implements \JsonSerializable {
         throw new \InvalidArgumentException(__METHOD__ . ': Entity expected');
     }
 
-    /** @return entities\Targetable|null target */
+    /** @return entities\Entity|null target */
     public function getTarget() {
         return $this->target;
     }
 
     /**
-     * @param entities\Targetable|null $target
+     * @param entities\Entity|null $target
      * @return $this|Event
      */
     public function setTarget($target) {
-        if (is_null($target) || ($target instanceof entities\Targetable)) {
+        if (is_null($target) || ($target instanceof entities\Entity)) {
             $this->target = $target;
             return $this;
         }
 
-        throw new \InvalidArgumentException(__METHOD__ . ': Targetable expected');
+        throw new \InvalidArgumentException(__METHOD__ . ': Entity expected');
     }
 
-    /** @return entities\Generatable generated */
+    /** @return entities\Entity generated */
     public function getGenerated() {
         return $this->generated;
     }
 
     /**
-     * @param entities\Generatable $generated
+     * @param entities\Entity $generated
      * @return $this|Event
      */
-    public function setGenerated(entities\Generatable $generated) {
+    public function setGenerated(entities\Entity $generated) {
         $this->generated = $generated;
         return $this;
     }
 
-    /** @return entities\Referrable */
+    /** @return entities\Entity */
     public function getReferrer() {
         return $this->referrer;
     }
 
     /**
-     * @param entities\Referrable $referrer
+     * @param entities\Entity $referrer
      * @return $this|Event
      */
-    public function setReferrer(entities\Referrable $referrer) {
+    public function setReferrer(entities\Entity $referrer) {
         $this->referrer = $referrer;
         return $this;
     }

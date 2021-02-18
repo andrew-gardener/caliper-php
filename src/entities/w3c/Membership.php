@@ -2,7 +2,7 @@
 namespace IMSGlobal\Caliper\entities\w3c;
 
 interface Membership {
-    /** @return \IMSGlobal\Caliper\entities\foaf\Agent */
+    /** @return \IMSGlobal\Caliper\entities\agent\Agent */
     function getMember();
 
     /** @return Organization */

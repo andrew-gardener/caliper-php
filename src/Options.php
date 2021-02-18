@@ -76,7 +76,7 @@ class Options {
      */
     public function setConnectionTimeout($connectionTimeout) {
         if (!is_int($connectionTimeout)) {
-            throw new \InvalidArgumentException(__METHOD__ . ': int expected');
+            throw new \InvalidArgumentException(__METHOD__ . ': integer expected');
         }
 
         $this->connectionTimeout = $connectionTimeout;
@@ -100,7 +100,7 @@ class Options {
      */
     public function setSocketTimeout($socketTimeout) {
         if (!is_int($socketTimeout)) {
-            throw new \InvalidArgumentException(__METHOD__ . ': int expected');
+            throw new \InvalidArgumentException(__METHOD__ . ': integer expected');
         }
 
         $this->socketTimeout = $socketTimeout;
@@ -124,7 +124,7 @@ class Options {
      */
     public function setConnectionRequestTimeout($connectionRequestTimeout) {
         if (!is_int($connectionRequestTimeout)) {
-            throw new \InvalidArgumentException(__METHOD__ . ': int expected');
+            throw new \InvalidArgumentException(__METHOD__ . ': integer expected');
         }
 
         $this->connectionRequestTimeout = $connectionRequestTimeout;
@@ -163,7 +163,7 @@ class Options {
      */
     public function setJsonEncodeOptions($jsonEncodeOptions) {
         if (!is_int($jsonEncodeOptions)) {
-            throw new \InvalidArgumentException(__METHOD__ . ': int expected');
+            throw new \InvalidArgumentException(__METHOD__ . ': integer expected');
         }
 
         $this->jsonEncodeOptions = $jsonEncodeOptions;

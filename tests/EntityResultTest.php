@@ -8,10 +8,10 @@ use IMSGlobal\Caliper\entities\assignable\Attempt;
 use IMSGlobal\Caliper\entities\outcome\Result;
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EntityResultTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

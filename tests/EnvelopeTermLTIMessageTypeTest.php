@@ -5,7 +5,7 @@ use IMSGlobal\Caliper\entities\link\LtiLink;
 use IMSGlobal\Caliper\entities\LTIMessageType;
 
 class EnvelopeTermLTIMessageTypeTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
         $message_types = array(

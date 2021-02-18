@@ -5,10 +5,10 @@ use IMSGlobal\Caliper\entities\assignable\AssignableDigitalResource;
 
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EntityAssignableDigitalResourceTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

@@ -5,10 +5,10 @@ use IMSGlobal\Caliper\entities\agent\Organization;
 
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EntityOrganizationTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

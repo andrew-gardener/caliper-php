@@ -6,10 +6,10 @@ use IMSGlobal\Caliper\entities\assessment\AssessmentItem;
 
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EntityAssessmentTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

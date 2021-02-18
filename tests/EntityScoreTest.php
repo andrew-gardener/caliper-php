@@ -9,10 +9,10 @@ use IMSGlobal\Caliper\entities\DigitalResource;
 use IMSGlobal\Caliper\entities\outcome\Score;
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EntityScoreTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

@@ -9,10 +9,10 @@ use IMSGlobal\Caliper\events\Event;
 
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EventGeneralCreatedTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

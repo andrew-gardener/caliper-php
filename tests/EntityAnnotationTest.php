@@ -6,10 +6,10 @@ use IMSGlobal\Caliper\entities\annotation\Annotation;
 use IMSGlobal\Caliper\entities\Page;
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EntityAnnotationTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

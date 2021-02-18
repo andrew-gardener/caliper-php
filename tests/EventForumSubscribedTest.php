@@ -16,10 +16,10 @@ use IMSGlobal\Caliper\events\ForumEvent;
 
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EventForumSubscribedTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

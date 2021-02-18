@@ -7,10 +7,10 @@ use IMSGlobal\Caliper\entities\assignable\Attempt;
 
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EntityAttemptTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

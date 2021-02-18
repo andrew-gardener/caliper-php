@@ -4,10 +4,10 @@ require_once 'CaliperTestCase.php';
 use IMSGlobal\Caliper\entities\link\Link;
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EntityLinkTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

@@ -3,7 +3,7 @@
 /**
  * Class CaliperTestUtilities
  *
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class CaliperTestUtilities {
     public static function saveFormattedFixtureAndTestJson($fixtureJson, $testJson,

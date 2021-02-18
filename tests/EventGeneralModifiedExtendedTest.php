@@ -8,10 +8,10 @@ use IMSGlobal\Caliper\entities\reading\Document;
 use IMSGlobal\Caliper\events\Event;
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EventGeneralModifiedExtendedTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

@@ -5,10 +5,10 @@ use IMSGlobal\Caliper\entities\media\MediaLocation;
 
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EntityMediaLocationTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

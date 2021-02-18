@@ -13,10 +13,10 @@ use IMSGlobal\Caliper\entities\outcome\Score;
 use IMSGlobal\Caliper\events\GradeEvent;
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EventGradeGradedItemTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

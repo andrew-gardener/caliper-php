@@ -5,7 +5,7 @@ use IMSGlobal\Caliper\entities\measure\AggregateMeasure;
 use IMSGlobal\Caliper\entities\measure\Metric;
 
 class EnvelopeTermMetricTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
         $metrics = array(

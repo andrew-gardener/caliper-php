@@ -5,7 +5,7 @@ define('CALIPER_LIB_PATH', realpath(dirname(__FILE__) . '/..'));
 
 require_once 'CaliperTestUtilities.php';
 
-class CaliperTestCase extends PHPUnit_Framework_TestCase {
+class CaliperTestCase extends \PHPUnit\Framework\TestCase {
     const
         DEFAULT_TIMEZONE = 'UTC',
         FIXTURE_DIRECTORY_PATH = '../caliper-spec/fixtures/v1p2',
@@ -27,7 +27,7 @@ class CaliperTestCase extends PHPUnit_Framework_TestCase {
      * environment variable */
     private $outputOnlyFailures = true;
 
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
         date_default_timezone_set(self::DEFAULT_TIMEZONE);
 

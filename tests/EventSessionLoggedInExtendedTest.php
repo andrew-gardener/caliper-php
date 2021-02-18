@@ -9,10 +9,10 @@ use IMSGlobal\Caliper\entities\session\Session;
 use IMSGlobal\Caliper\events\SessionEvent;
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EventSessionLoggedInExtendedTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
         $this->setTestObject(

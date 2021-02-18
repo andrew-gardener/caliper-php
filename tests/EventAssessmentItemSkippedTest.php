@@ -17,10 +17,10 @@ use IMSGlobal\Caliper\events\AssessmentItemEvent;
 
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EventAssessmentItemSkippedTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

@@ -6,7 +6,7 @@ use IMSGlobal\Caliper\entities\SystemIdentifier;
 use IMSGlobal\Caliper\entities\SystemIdentifierType;
 
 class EnvelopeTermSystemIdentifierTypeTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
         $system_identifiers = array(

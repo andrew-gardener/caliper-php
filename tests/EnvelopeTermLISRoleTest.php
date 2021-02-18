@@ -8,7 +8,7 @@ use IMSGlobal\Caliper\entities\lis\CourseOffering;
 use IMSGlobal\Caliper\entities\agent\Person;
 
 class EnvelopeTermLISRoleTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
         $role_sets = array(

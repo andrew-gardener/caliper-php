@@ -9,10 +9,10 @@ use IMSGlobal\Caliper\entities\response\FillinBlankResponse;
 
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EntityFillinBlankResponseTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

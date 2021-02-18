@@ -13,10 +13,10 @@ use IMSGlobal\Caliper\events\NavigationEvent;
 
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EventNavigationNavigatedToWebPageThinnedTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

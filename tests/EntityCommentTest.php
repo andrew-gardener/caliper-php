@@ -9,10 +9,10 @@ use IMSGlobal\Caliper\entities\lis\CourseSection;
 
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EntityCommentTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
         $this->setTestObject(

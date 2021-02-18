@@ -7,7 +7,7 @@ use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities\Entity;
 
 class EnvelopeTermActionTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
         $actions = array(

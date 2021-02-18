@@ -8,10 +8,10 @@ use IMSGlobal\Caliper\entities\reading\Document;
 
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EntityHighlightAnnotationTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

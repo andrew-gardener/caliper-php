@@ -7,10 +7,10 @@ use IMSGlobal\Caliper\entities\lis\CourseSection;
 require_once 'CaliperTestCase.php';
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EnvelopeEntitySingleTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
         $this->setTestObject((new \IMSGlobal\Caliper\request\Envelope())

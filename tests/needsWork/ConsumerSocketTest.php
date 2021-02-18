@@ -5,18 +5,18 @@ use IMSGlobal\Caliper\entities\lis\CourseSection;
  * These tests may require an eventstore endpoint
  *
  * @requires extension fix_these_tests
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  *
  * PHPUnit grouping
  * @group needsWork
  */
-class ConsumerSocketTest extends PHPUnit_Framework_TestCase {
+class ConsumerSocketTest extends \PHPUnit\Framework\TestCase {
 
     private $client;
 
     private $caliperEntity;
 
-    function setUp() {
+    function setUp() : void {
         $this->client = new IMSGlobal\Caliper\Client('testApiKey', [
             'consumer' => 'socket',
         ]);

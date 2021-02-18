@@ -5,10 +5,10 @@ use IMSGlobal\Caliper\entities\link\LtiLink;
 use IMSGlobal\Caliper\entities\LTIMessageType;
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EntityLtiLinkTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
 

@@ -5,10 +5,10 @@ use IMSGlobal\Caliper\entities\response\RatingScaleResponse;
 
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EntityRatingScaleResponseTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
         $this->setTestObject(

@@ -6,10 +6,10 @@ use IMSGlobal\Caliper\entities\survey\QuestionnaireItem;
 
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EntityQuestionnaireTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
         $this->setTestObject(

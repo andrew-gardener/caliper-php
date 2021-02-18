@@ -2,14 +2,14 @@
 use IMSGlobal\Caliper\entities\lis\CourseSection;
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  *
  * PHPUnit grouping
  * @group needsWork
  */
-class ApiTest extends PHPUnit_Framework_TestCase {
+class ApiTest extends \PHPUnit\Framework\TestCase {
 
-    function setUp() {
+    function setUp() : void {
         date_default_timezone_set('UTC');
         $this->markTestSkipped('TODO: Update these tests to use a testing server or mock their own.');
         IMSGlobal\Caliper\Sensor::init('testapiKey');

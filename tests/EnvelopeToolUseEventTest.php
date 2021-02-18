@@ -16,10 +16,10 @@ use IMSGlobal\Caliper\Sensor;
 require_once 'CaliperTestCase.php';
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EnvelopeToolUseEventTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
         $this->setTestObject((new \IMSGlobal\Caliper\request\Envelope())

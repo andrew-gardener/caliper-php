@@ -84,10 +84,12 @@ class ClassUtil {
             foreach ($serializationData['@context'] as $contextItem) {
                 if (is_array($contextItem)) {
                     foreach ($contextItem as $contextKey => $contextCoercion) {
-                        $objectTypeId = @$serializationData[$contextKey]['type'];
-                        $coercionTypeId = @$contextCoercion['id'];
-                        if ($objectTypeId == $coercionTypeId) {
-                            $serializationData[$contextKey] = $serializationData[$contextKey][$contextCoercion['type']];
+                        if (is_array($contextCoercion) && isset($serializationData[$contextKey]['type']) && isset($contextCoercion['id'])) {
+                            $objectTypeId = $serializationData[$contextKey]['type'];
+                            $coercionTypeId = $contextCoercion['id'];
+                            if ($objectTypeId == $coercionTypeId) {
+                                $serializationData[$contextKey] = $serializationData[$contextKey][$contextCoercion['type']];
+                            }
                         }
                     }
                 }

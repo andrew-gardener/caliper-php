@@ -18,10 +18,10 @@ use IMSGlobal\Caliper\entities\DigitalResourceCollection;
 
 
 /**
- * @requires PHP 5.6.28
+ * @requires PHP 7.3
  */
 class EventFeedbackCommentedTest extends CaliperTestCase {
-    function setUp() {
+    function setUp() : void {
         parent::setUp();
 
         $this->setTestObject(

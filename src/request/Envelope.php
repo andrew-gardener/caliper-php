@@ -94,7 +94,7 @@ class Envelope implements \JsonSerializable {
         foreach ($data as $dataItem) {
             if (!(($dataItem instanceof Entity) || ($dataItem instanceof Event))) {
                 throw new \InvalidArgumentException(__METHOD__ .
-                    ': array of ' . Entity::className() . ' or ' . Event::className() . ' expected');
+                    ': array of Entity or Event expected');
             }
         }
 

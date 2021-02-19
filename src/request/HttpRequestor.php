@@ -39,7 +39,7 @@ class HttpRequestor extends Requestor {
         foreach ($items as $anItem) {
             if (!(($anItem instanceof Entity) || ($anItem instanceof Event))) {
                 throw new \InvalidArgumentException(__METHOD__ .
-                    ': array of ' . Entity::className() . ' or ' . Event::className() . ' expected');
+                    ': array of Entity or Event expected');
             }
         }
 

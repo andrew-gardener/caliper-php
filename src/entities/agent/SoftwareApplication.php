@@ -4,8 +4,7 @@ namespace IMSGlobal\Caliper\entities\agent;
 
 use IMSGlobal\Caliper\entities;
 
-class SoftwareApplication extends Agent implements entities\foaf\Agent,
-    entities\schemadotorg\SoftwareApplication, entities\Targetable {
+class SoftwareApplication extends Agent implements entities\schemadotorg\SoftwareApplication {
     /** @var host */
     private $host;
     /** @var ipAddress */

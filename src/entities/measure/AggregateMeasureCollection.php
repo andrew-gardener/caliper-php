@@ -4,7 +4,7 @@ namespace IMSGlobal\Caliper\entities\measure;
 use IMSGlobal\Caliper\entities\Collection;
 use IMSGlobal\Caliper\entities;
 
-class AggregateMeasureCollection extends Collection implements entities\Generatable {
+class AggregateMeasureCollection extends Collection {
     /** @var AggregateMeasure[]|null */
     private $items;
 
@@ -37,7 +37,7 @@ class AggregateMeasureCollection extends Collection implements entities\Generata
             foreach ($items as $item) {
                 if (!($item instanceof AggregateMeasure)) {
                     throw new \InvalidArgumentException(
-                        __METHOD__ . ': array of ' . AggregateMeasure::className() . ' expected');
+                        __METHOD__ . ': array of AggregateMeasure expected');
                 }
             }
         }

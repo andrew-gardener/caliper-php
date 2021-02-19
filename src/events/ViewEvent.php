@@ -9,7 +9,6 @@ use IMSGlobal\Caliper\entities\survey\Questionnaire;
 use IMSGlobal\Caliper\entities\survey\QuestionnaireItem;
 
 class ViewEvent extends Event {
-
     /** @var DigitalResource */
     private $object;
 
@@ -30,7 +29,7 @@ class ViewEvent extends Event {
      * @return $this|ViewEvent
      */
     public function setObject($object) {
-        if (is_null($object) || ($object instanceof DigitalResource)) {
+        if ($object instanceof DigitalResource) {
             $this->object = $object;
             if ($this->profile === profiles\Profile::SURVEY) {
                 if (!$object instanceof Questionnaire && !$object instanceof QuestionnaireItem) {

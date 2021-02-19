@@ -24,7 +24,7 @@ class ForumEvent extends Event {
      * @return $this|ForumEvent
      */
     public function setObject($object) {
-        if (is_null($object) || ($object instanceof Forum)) {
+        if ($object instanceof Forum) {
             $this->object = $object;
             return $this;
         }

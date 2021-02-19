@@ -4,7 +4,6 @@ namespace IMSGlobal\Caliper\events;
 
 use IMSGlobal\Caliper\actions;
 use IMSGlobal\Caliper\entities\assignable\Attempt;
-use IMSGlobal\Caliper\entities\Generatable;
 use IMSGlobal\Caliper\entities\outcome\Score;
 
 class GradeEvent extends Event {
@@ -30,7 +29,7 @@ class GradeEvent extends Event {
      * @return $this|GradeEvent
      */
     public function setObject($object) {
-        if (is_null($object) || ($object instanceof Attempt)) {
+        if ($object instanceof Attempt) {
             $this->object = $object;
             return $this;
         }
@@ -47,7 +46,7 @@ class GradeEvent extends Event {
      * @param Score $generated
      * @return $this|GradeEvent
      */
-    public function setGenerated(Generatable $generated) {
+    public function setGenerated($generated) {
         if (is_null($generated) || ($generated instanceof Score)) {
             $this->generated = $generated;
             return $this;

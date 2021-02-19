@@ -35,7 +35,7 @@ class DigitalResourceCollection extends DigitalResource implements Collectable {
             foreach ($items as $item) {
                 if (!($item instanceof DigitalResource)) {
                     throw new \InvalidArgumentException(
-                        __METHOD__ . ': array of ' . DigitalResource::className() . ' expected');
+                        __METHOD__ . ': array of DigitalResource expected');
                 }
             }
         }

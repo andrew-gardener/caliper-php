@@ -33,7 +33,7 @@ class EnvelopeEventBatchTest extends CaliperTestCase {
             ->setSensorId(new Sensor('https://example.edu/sensors/1'))
             ->setDataVersion('http://purl.imsglobal.org/ctx/caliper/v1p2')
             ->setData([
-                (new NavigationEvent())
+                (new NavigationEvent('urn:uuid:72f66ce5-d2ec-44cc-bce5-41602e1015dc'))
                     ->setActor((new Person('https://example.edu/users/554433'))
                     )
                     ->setProfile(new Profile(Profile::GENERAL))
@@ -68,8 +68,8 @@ class EnvelopeEventBatchTest extends CaliperTestCase {
                         ->setDateCreated(new \DateTime('2016-08-01T06:00:00.000Z')))
                     ->setSession((new Session('https://example.com/sessions/1f6442a482de72ea6ad134943812bff564a76259'))
                         ->setStartedAtTime(new \DateTime('2016-11-15T10:00:00.000Z')))
-                    ->setId('urn:uuid:72f66ce5-d2ec-44cc-bce5-41602e1015dc'),
-                (new AnnotationEvent())
+                ,
+                (new AnnotationEvent('urn:uuid:c0afa013-64df-453f-b0a6-50f3efbe4cc0'))
                     ->setActor((new Person('https://example.edu/users/554433'))
                     )
                     ->setProfile(new Profile(Profile::ANNOTATION))
@@ -101,8 +101,8 @@ class EnvelopeEventBatchTest extends CaliperTestCase {
                         ->setDateCreated(new \DateTime('2016-08-01T06:00:00.000Z')))
                     ->setSession((new Session('https://example.com/sessions/1f6442a482de72ea6ad134943812bff564a76259'))
                         ->setStartedAtTime(new \DateTime('2016-11-15T10:00:00.000Z')))
-                    ->setId('urn:uuid:c0afa013-64df-453f-b0a6-50f3efbe4cc0'),
-                (new ViewEvent())
+                ,
+                (new ViewEvent('urn:uuid:94bad4bd-a7b1-4c3e-ade4-2253efe65172'))
                     ->setActor((new Person('https://example.edu/users/554433'))
                     )
                     ->setProfile(new Profile(Profile::READING))
@@ -136,7 +136,7 @@ class EnvelopeEventBatchTest extends CaliperTestCase {
                         ->setDateCreated(new \DateTime('2016-08-01T06:00:00.000Z')))
                     ->setSession((new Session('https://example.com/sessions/1f6442a482de72ea6ad134943812bff564a76259'))
                         ->setStartedAtTime(new \DateTime('2016-11-15T10:00:00.000Z')))
-                    ->setId('urn:uuid:94bad4bd-a7b1-4c3e-ade4-2253efe65172'),
+                    ,
             ])
         );
     }

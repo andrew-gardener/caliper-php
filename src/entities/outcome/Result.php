@@ -5,14 +5,14 @@ namespace IMSGlobal\Caliper\entities\outcome;
 use IMSGlobal\Caliper\entities;
 use IMSGlobal\Caliper\entities\assignable\Attempt;
 
-class Result extends entities\Entity implements entities\Generatable {
+class Result extends entities\Entity {
     /** @var Attempt|null */
     private $attempt;
     /** @var float */
     private $maxResultScore;
     /** @var float */
     private $resultScore;
-    /** @var entities\foaf\Agent */
+    /** @var entities\agent\Agent */
     private $scoredBy;
     /** @var string */
     private $comment;
@@ -110,16 +110,16 @@ class Result extends entities\Entity implements entities\Generatable {
         return $this;
     }
 
-    /** @return entities\foaf\Agent scoredBy */
+    /** @return entities\agent\Agent scoredBy */
     public function getScoredBy() {
         return $this->scoredBy;
     }
 
     /**
-     * @param entities\foaf\Agent $scoredBy
+     * @param entities\agent\Agent $scoredBy
      * @return $this|Result
      */
-    public function setScoredBy(entities\foaf\Agent $scoredBy) {
+    public function setScoredBy(entities\agent\Agent $scoredBy) {
         $this->scoredBy = $scoredBy;
         return $this;
     }

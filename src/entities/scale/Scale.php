@@ -5,7 +5,7 @@ namespace IMSGlobal\Caliper\entities\scale;
 use IMSGlobal\Caliper\entities\Entity;
 use IMSGlobal\Caliper\entities;
 
-class Scale extends Entity implements entities\Referrable {
+class Scale extends Entity {
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::SCALE));

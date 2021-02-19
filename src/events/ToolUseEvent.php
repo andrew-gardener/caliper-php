@@ -4,7 +4,6 @@ namespace IMSGlobal\Caliper\events;
 
 use IMSGlobal\Caliper\entities\agent\SoftwareApplication;
 use IMSGlobal\Caliper\entities\measure\AggregateMeasureCollection;
-use IMSGlobal\Caliper\entities\Generatable;
 
 class ToolUseEvent extends Event {
     /** @var SoftwareApplication */
@@ -30,7 +29,7 @@ class ToolUseEvent extends Event {
      * @return $this|ToolUseEvent
      */
     public function setObject($object) {
-        if (is_null($object) || ($object instanceof SoftwareApplication)) {
+        if ($object instanceof SoftwareApplication) {
             $this->object = $object;
             return $this;
         }
@@ -56,17 +55,21 @@ class ToolUseEvent extends Event {
         throw new \InvalidArgumentException(__METHOD__ . ': SoftwareApplication expected');
     }
 
-    /** @return Generatable generated */
+    /** @return AggregateMeasureCollection|null generated */
     public function getGenerated() {
         return $this->generated;
     }
 
     /**
-     * @param Generatable $generated
+     * @param AggregateMeasureCollection|null $generated
      * @return $this|ToolUseEvent
      */
-    public function setGenerated(Generatable $generated) {
-        $this->generated = $generated;
-        return $this;
+    public function setGenerated($generated) {
+        if (is_null($generated) || ($generated instanceof AggregateMeasureCollection)) {
+            $this->generated = $generated;
+            return $this;
+
+        }
+        throw new \InvalidArgumentException(__METHOD__ . ': AggregateMeasureCollection expected');
     }
 }

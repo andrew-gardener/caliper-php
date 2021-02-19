@@ -7,7 +7,7 @@ use IMSGlobal\Caliper\entities\search\Query;
 use IMSGlobal\Caliper\entities\agent\SoftwareApplication;
 use IMSGlobal\Caliper\entities;
 
-class SearchResponse extends Entity implements entities\Referrable, entities\Generatable {
+class SearchResponse extends Entity {
     /** @var SoftwareApplication|null */
     private $searchProvider;
     /** @var Entity|null */
@@ -94,7 +94,7 @@ class SearchResponse extends Entity implements entities\Referrable, entities\Gen
             return $this;
         }
 
-        throw new \InvalidArgumentException(__METHOD__ . ': int expected');
+        throw new \InvalidArgumentException(__METHOD__ . ': integer expected');
     }
 
 
@@ -113,8 +113,7 @@ class SearchResponse extends Entity implements entities\Referrable, entities\Gen
 
             foreach ($searchResults as $searchResult) {
                 if (!($searchResult instanceof Entity) && !is_string($searchResult)) {
-                    throw new \InvalidArgumentException(
-                        __METHOD__ . ': array of ' . Entity::className() . ' or string expected');
+                    throw new \InvalidArgumentException(__METHOD__ . ': array of Entity or string expected');
                 }
             }
         }

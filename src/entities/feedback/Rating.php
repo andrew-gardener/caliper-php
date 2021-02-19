@@ -7,7 +7,7 @@ use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities\question\Question;
 use IMSGlobal\Caliper\entities;
 
-class Rating extends Entity implements entities\Referrable, entities\Generatable {
+class Rating extends Entity {
     /** @var Person */
     private $rater;
     /** @var Entity */

@@ -2,7 +2,6 @@
 
 namespace IMSGlobal\Caliper\events;
 use IMSGlobal\Caliper\entities\search\SearchResponse;
-use IMSGlobal\Caliper\entities\Generatable;
 
 
 class SearchEvent extends Event {
@@ -23,7 +22,7 @@ class SearchEvent extends Event {
      * @param SearchResponse $generated
      * @return $this|SearchEvent
      */
-    public function setGenerated(Generatable $generated) {
+    public function setGenerated($generated) {
         if (is_null($generated) || ($generated instanceof SearchResponse)) {
             $this->generated = $generated;
             return $this;

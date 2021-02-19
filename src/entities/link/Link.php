@@ -4,7 +4,7 @@ namespace IMSGlobal\Caliper\entities\link;
 
 use IMSGlobal\Caliper\entities;
 
-class Link extends entities\Entity implements entities\Referrable, entities\Targetable {
+class Link extends entities\Entity {
     public function __construct($id) {
         parent::__construct($id);
         $this->setType(new entities\EntityType(entities\EntityType::LINK));

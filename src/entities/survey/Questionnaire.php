@@ -38,7 +38,7 @@ class Questionnaire extends entities\DigitalResourceCollection {
             foreach ($items as $item) {
                 if (!($item instanceof QuestionnaireItem)) {
                     throw new \InvalidArgumentException(
-                        __METHOD__ . ': array of ' . QuestionnaireItem::className() . ' expected');
+                        __METHOD__ . ': array of QuestionnaireItem expected');
                 }
             }
         }

@@ -6,7 +6,7 @@ use IMSGlobal\Caliper\entities\Entity;
 use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities;
 
-class Comment extends Entity implements entities\Referrable, entities\Generatable {
+class Comment extends Entity {
     /** @var Person */
     private $commenter;
     /** @var Entity */

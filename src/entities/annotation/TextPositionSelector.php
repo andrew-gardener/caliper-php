@@ -40,7 +40,7 @@ class TextPositionSelector extends Entity implements \JsonSerializable {
      */
     public function setStart($start) {
         if (!is_int($start)) {
-            throw new \InvalidArgumentException(__METHOD__ . ': int expected');
+            throw new \InvalidArgumentException(__METHOD__ . ': integer expected');
         }
 
         $this->start = $start;
@@ -58,7 +58,7 @@ class TextPositionSelector extends Entity implements \JsonSerializable {
      */
     public function setEnd($end) {
         if (!is_int($end)) {
-            throw new \InvalidArgumentException(__METHOD__ . ': int expected');
+            throw new \InvalidArgumentException(__METHOD__ . ': integer expected');
         }
 
         $this->end = $end;

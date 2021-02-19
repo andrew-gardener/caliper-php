@@ -4,7 +4,7 @@ namespace IMSGlobal\Caliper\entities\lis;
 
 use IMSGlobal\Caliper\entities;
 
-class CourseOffering extends entities\Entity implements Course {
+class CourseOffering extends entities\agent\Organization {
     /** @var string */
     private $courseNumber;
     /** @var string */

@@ -108,7 +108,7 @@ class AssignableDigitalResource extends DigitalResource implements Assignable {
      */
     public function setMaxAttempts($maxAttempts) {
         if (!is_int($maxAttempts)) {
-            throw new \InvalidArgumentException(__METHOD__ . ': int expected');
+            throw new \InvalidArgumentException(__METHOD__ . ': integer expected');
         }
 
         $this->maxAttempts = $maxAttempts;
@@ -126,7 +126,7 @@ class AssignableDigitalResource extends DigitalResource implements Assignable {
      */
     public function setMaxSubmits($maxSubmits) {
         if (!is_int($maxSubmits)) {
-            throw new \InvalidArgumentException(__METHOD__ . ': int expected');
+            throw new \InvalidArgumentException(__METHOD__ . ': integer expected');
         }
 
         $this->maxSubmits = $maxSubmits;

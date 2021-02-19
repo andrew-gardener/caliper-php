@@ -6,7 +6,7 @@ use IMSGlobal\Caliper\entities\Entity;
 use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities;
 
-class Query extends Entity implements entities\Referrable {
+class Query extends Entity {
     /** @var Person|null */
     private $creator;
     /** @var Entity|null */

@@ -90,7 +90,7 @@ class EnvelopeMixedBatchTest extends CaliperTestCase {
                     )
                     ->setDateCreated(
                         new \DateTime('2016-08-01T06:00:00.000Z')),
-                (new AssessmentEvent())
+                (new AssessmentEvent('urn:uuid:c51570e4-f8ed-4c18-bb3a-dfe51b2cc594'))
                     ->setActor((new Person('https://example.edu/users/554433'))->makeReference())
                     ->setProfile(new Profile(Profile::ASSESSMENT))
                     ->setAction(new Action(Action::STARTED))
@@ -116,8 +116,7 @@ class EnvelopeMixedBatchTest extends CaliperTestCase {
                     ->setObject((new Assessment('https://example.edu/terms/201601/courses/7/sections/1/assess/1?ver=v1p0'))->makeReference())
                     ->setSession((new Session('https://example.edu/sessions/1f6442a482de72ea6ad134943812bff564a76259'))
                         ->setStartedAtTime(new \DateTime('2016-11-15T10:00:00.000Z'))
-                    )
-                    ->setId('urn:uuid:c51570e4-f8ed-4c18-bb3a-dfe51b2cc594'),
+                    ),
                 (new AssessmentEvent('urn:uuid:dad88464-0c20-4a19-a1ba-ddf2f9c3ff33'))
                     ->setActor(
                         (new Person('https://example.edu/users/554433'))->makeReference())

@@ -2,7 +2,6 @@
 
 namespace IMSGlobal\Caliper\events;
 
-use IMSGlobal\Caliper\entities\foaf\Agent;
 use IMSGlobal\Caliper\entities\agent\Person;
 use IMSGlobal\Caliper\entities\survey\Questionnaire;
 
@@ -27,8 +26,8 @@ class QuestionnaireEvent extends Event {
      * @throws \InvalidArgumentException Person expected
      * @return $this|QuestionnaireEvent
      */
-    public function setActor(Agent $actor) {
-        if (is_null($actor) || ($actor instanceof Person)) {
+    public function setActor($actor) {
+        if ($actor instanceof Person) {
             $this->actor = $actor;
             return $this;
         }
@@ -47,7 +46,7 @@ class QuestionnaireEvent extends Event {
      * @return $this|QuestionnaireEvent
      */
     public function setObject($object) {
-        if (is_null($object) || ($object instanceof Questionnaire)) {
+        if ($object instanceof Questionnaire) {
             $this->object = $object;
             return $this;
         }

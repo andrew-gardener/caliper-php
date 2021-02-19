@@ -24,7 +24,7 @@ class ThreadEvent extends Event {
      * @return $this|ThreadEvent
      */
     public function setObject($object) {
-        if (is_null($object) || ($object instanceof Thread)) {
+        if ($object instanceof Thread) {
             $this->object = $object;
             return $this;
         }
